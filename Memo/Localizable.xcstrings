@@ -1,0 +1,3582 @@
+{
+  "sourceLanguage" : "zh-Hans",
+  "strings" : {
+    "" : {
+
+    },
+    "、" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ", "
+          }
+        }
+      }
+    },
+    "%@ %@" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
+          }
+        }
+      }
+    },
+    "%@ %@放在哪里了？" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Where is %1$@ %2$@ placed?"
+          }
+        }
+      }
+    },
+    "%@什么时候吃？" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "When to take %@?"
+          }
+        }
+      }
+    },
+    "%lld 个传感器" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld sensors"
+          }
+        }
+      }
+    },
+    "%lld 张" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld cards"
+          }
+        }
+      }
+    },
+    "%lld 条记录" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld records"
+          }
+        }
+      }
+    },
+    "%lld 特征点" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld feature points"
+          }
+        }
+      }
+    },
+    "%lld 特征点 · %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld feature points · %2$@"
+          }
+        }
+      }
+    },
+    "%lld 设备" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld devices"
+          }
+        }
+      }
+    },
+    "%lld 题" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld questions"
+          }
+        }
+      }
+    },
+    "%lld/%lld" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld/%2$lld"
+          }
+        }
+      }
+    },
+    "%lld分钟前" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld min ago"
+          }
+        }
+      }
+    },
+    "0.1.0" : {
+
+    },
+    "API Key" : {
+
+    },
+    "AP不可用" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AR unavailable"
+          }
+        }
+      }
+    },
+    "AR不可用" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AR unavailable"
+          }
+        }
+      }
+    },
+    "AR会话：中断" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AR session: Interrupted"
+          }
+        }
+      }
+    },
+    "AR追踪不可用" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AR tracking unavailable"
+          }
+        }
+      }
+    },
+    "AR追踪失败" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AR tracking failed"
+          }
+        }
+      }
+    },
+    "AR错误：%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AR error: %@"
+          }
+        }
+      }
+    },
+    "Base URL" : {
+
+    },
+    "DeepSeek AI 对话" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DeepSeek AI Chat"
+          }
+        }
+      }
+    },
+    "EverMemOS" : {
+
+    },
+    "EverMemOS 云端" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EverMemOS Cloud"
+          }
+        }
+      }
+    },
+    "Gemini AI 用药监控" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gemini AI Medication Monitoring"
+          }
+        }
+      }
+    },
+    "HomeKit 异常：%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HomeKit error: %@"
+          }
+        }
+      }
+    },
+    "HomeKit 房间绑定" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HomeKit Room Binding"
+          }
+        }
+      }
+    },
+    "HomeKit 权限受限，请在系统设置中允许" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HomeKit permissions restricted, enable in system settings"
+          }
+        }
+      }
+    },
+    "HomeKit 设备" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HomeKit Devices"
+          }
+        }
+      }
+    },
+    "Memo 患者记忆" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memo Patient Memory"
+          }
+        }
+      }
+    },
+    "PIN" : {
+
+    },
+    "PIN码错误" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Incorrect PIN"
+          }
+        }
+      }
+    },
+    "world地图文件过大（%lld MB），请减少扫描范围" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spatial map too large (%lld MB), reduce scan area"
+          }
+        }
+      }
+    },
+    "一般" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Normal"
+          }
+        }
+      }
+    },
+    "世界地图文件过大（%lld MB），请减少扫描范围" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spatial map too large (%lld MB), reduce scan area"
+          }
+        }
+      }
+    },
+    "书房" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Study"
+          }
+        }
+      }
+    },
+    "云端" : {
+
+    },
+    "人脸太小，请靠近一些" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face too small, move closer"
+          }
+        }
+      }
+    },
+    "人脸数据写入失败：%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face data write failed: %@"
+          }
+        }
+      }
+    },
+    "人脸注册" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face Registration"
+          }
+        }
+      }
+    },
+    "人脸识别" : {
+
+    },
+    "人脸识别：已暂停" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face recognition: Paused"
+          }
+        }
+      }
+    },
+    "人脸识别：未初始化" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face recognition: Not initialized"
+          }
+        }
+      }
+    },
+    "人脸识别：未启动" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face recognition: Not started"
+          }
+        }
+      }
+    },
+    "人脸识别：运行中" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face recognition: Running"
+          }
+        }
+      }
+    },
+    "人脸识别已注册" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face recognition registered"
+          }
+        }
+      }
+    },
+    "人脸识别未注册" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face recognition not registered"
+          }
+        }
+      }
+    },
+    "人脸识别模型未加载" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face recognition model not loaded"
+          }
+        }
+      }
+    },
+    "人脸识别模型未加载，无法生成特征" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face recognition model not loaded, cannot generate features"
+          }
+        }
+      }
+    },
+    "今天" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Today"
+          }
+        }
+      }
+    },
+    "今天没有需要关注的事项" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No items requiring attention today"
+          }
+        }
+      }
+    },
+    "今日建议" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Today"
+          }
+        }
+      }
+    },
+    "从 HomeKit 导入" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import from HomeKit"
+          }
+        }
+      }
+    },
+    "他/她是谁" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Who is he/she"
+          }
+        }
+      }
+    },
+    "你的%@叫什么名字？" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is your %@'s name?"
+          }
+        }
+      }
+    },
+    "使用Face ID" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use Face ID"
+          }
+        }
+      }
+    },
+    "使用PIN码" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use PIN Code"
+          }
+        }
+      }
+    },
+    "例：今天星期几？" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "E.g., What day is today?"
+          }
+        }
+      }
+    },
+    "例：星期三" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "E.g., Wednesday"
+          }
+        }
+      }
+    },
+    "例如：位置不对" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "E.g., wrong location"
+          }
+        }
+      }
+    },
+    "保存" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save"
+          }
+        }
+      }
+    },
+    "保存 Base URL" : {
+
+    },
+    "保存失败：%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save failed: %@"
+          }
+        }
+      }
+    },
+    "保存更正" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save Correction"
+          }
+        }
+      }
+    },
+    "保存的空间地图已损坏" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saved spatial map is corrupted"
+          }
+        }
+      }
+    },
+    "保存空间地图" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save Space Map"
+          }
+        }
+      }
+    },
+    "做得不错，继续加油！" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Good job, keep it up!"
+          }
+        }
+      }
+    },
+    "允许提前 %lld 分钟" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Allow %lld minutes early"
+          }
+        }
+      }
+    },
+    "关于" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About"
+          }
+        }
+      }
+    },
+    "关系" : {
+
+    },
+    "关系（例：女儿）" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Relationship (e.g., daughter)"
+          }
+        }
+      }
+    },
+    "关闭" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close"
+          }
+        }
+      }
+    },
+    "其他" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Other"
+          }
+        }
+      }
+    },
+    "再试" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retry"
+          }
+        }
+      }
+    },
+    "写入失败" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Write failed"
+          }
+        }
+      }
+    },
+    "准备就绪" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ready"
+          }
+        }
+      }
+    },
+    "分离模式" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Split Mode"
+          }
+        }
+      }
+    },
+    "切换到患者" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Switch to Patient"
+          }
+        }
+      }
+    },
+    "切换到照护者" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Switch to Caregiver"
+          }
+        }
+      }
+    },
+    "切换前置摄像头" : {
+
+    },
+    "切换后置摄像头" : {
+
+    },
+    "切换看护者" : {
+
+    },
+    "切换角色" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Switch Role"
+          }
+        }
+      }
+    },
+    "刚刚" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Just now"
+          }
+        }
+      }
+    },
+    "创建房间" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create Room"
+          }
+        }
+      }
+    },
+    "删除" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
+          }
+        }
+      }
+    },
+    "删除全部" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete All"
+          }
+        }
+      }
+    },
+    "删除全部人脸数据？" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete all face data?"
+          }
+        }
+      }
+    },
+    "别名" : {
+
+    },
+    "别名：%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aliases: %@"
+          }
+        }
+      }
+    },
+    "别名（可选，逗号分隔）" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aliases (optional, comma-separated)"
+          }
+        }
+      }
+    },
+    "到达了！" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arrived!"
+          }
+        }
+      }
+    },
+    "刷新" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Refresh"
+          }
+        }
+      }
+    },
+    "前置" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Front"
+          }
+        }
+      }
+    },
+    "加载地图失败：%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Failed to load map: %@"
+          }
+        }
+      }
+    },
+    "动作传感器" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Motion Sensor"
+          }
+        }
+      }
+    },
+    "卡片" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cards"
+          }
+        }
+      }
+    },
+    "卧室" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bedroom"
+          }
+        }
+      }
+    },
+    "即将就绪..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Almost ready..."
+          }
+        }
+      }
+    },
+    "历史" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "History"
+          }
+        }
+      }
+    },
+    "原始内容" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Original Content"
+          }
+        }
+      }
+    },
+    "原文：%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Original: %@"
+          }
+        }
+      }
+    },
+    "厨房" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kitchen"
+          }
+        }
+      }
+    },
+    "取消" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        }
+      }
+    },
+    "受限" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Limited"
+          }
+        }
+      }
+    },
+    "可用" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ready"
+          }
+        }
+      }
+    },
+    "后置" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Back"
+          }
+        }
+      }
+    },
+    "启用后此卡片将加入练习" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This card will be included in practice when enabled"
+          }
+        }
+      }
+    },
+    "告诉我" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tell me"
+          }
+        }
+      }
+    },
+    "图标" : {
+
+    },
+    "图片转换失败" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Image conversion failed"
+          }
+        }
+      }
+    },
+    "在%lld次交互中检测到负面情绪" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detected negative emotions in %lld interactions"
+          }
+        }
+      }
+    },
+    "基本信息" : {
+
+    },
+    "备注" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notes"
+          }
+        }
+      }
+    },
+    "太棒了！全部答对！" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Excellent! All correct!"
+          }
+        }
+      }
+    },
+    "好的，已取消给%@拨号。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK, cancelled call to %@."
+          }
+        }
+      }
+    },
+    "姓名" : {
+
+    },
+    "完成" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
+          }
+        }
+      }
+    },
+    "客厅" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Living Room"
+          }
+        }
+      }
+    },
+    "将删除所有样本照片和已生成的特征数据，此操作不可恢复。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All sample photos and generated feature data will be deleted. This cannot be undone."
+          }
+        }
+      }
+    },
+    "将清除所有数据并注入演示数据" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This will clear all data and inject demo data"
+          }
+        }
+      }
+    },
+    "就在附近" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nearby"
+          }
+        }
+      }
+    },
+    "已保存「%@ %@」的位置" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saved location of \"%1$@ %2$@\""
+          }
+        }
+      }
+    },
+    "已保存「%@」" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saved \"%@\""
+          }
+        }
+      }
+    },
+    "已关联的 HomeKit 房间中未发现传感器设备。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No sensor devices found in associated HomeKit rooms."
+          }
+        }
+      }
+    },
+    "已删除" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deleted"
+          }
+        }
+      }
+    },
+    "已删除的卡片" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deleted card"
+          }
+        }
+      }
+    },
+    "已建图" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mapped"
+          }
+        }
+      }
+    },
+    "已批准" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Approved"
+          }
+        }
+      }
+    },
+    "已找到位置！正在显示物品标记..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Location found! Showing item marker..."
+          }
+        }
+      }
+    },
+    "已放置标记！请给物品命名" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marker placed! Name the item"
+          }
+        }
+      }
+    },
+    "已纠错" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corrected"
+          }
+        }
+      }
+    },
+    "已识别：%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detected: %@"
+          }
+        }
+      }
+    },
+    "已配置" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configured"
+          }
+        }
+      }
+    },
+    "已采集 %lld 张，需要至少 5 张（最多 10 张）" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Collected %lld photos, need at least 5 (max 10)"
+          }
+        }
+      }
+    },
+    "已采集：%lld/%lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Collected: %1$lld/%2$lld"
+          }
+        }
+      }
+    },
+    "建议" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suggestions"
+          }
+        }
+      }
+    },
+    "建议措施" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suggested Actions"
+          }
+        }
+      }
+    },
+    "建议详情" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suggestion Details"
+          }
+        }
+      }
+    },
+    "开始采集" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start Collection"
+          }
+        }
+      }
+    },
+    "当前在：%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Currently in: %@"
+          }
+        }
+      }
+    },
+    "当前角色" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Current Role"
+          }
+        }
+      }
+    },
+    "当前设备暂不支持拨号，请让照护者协助。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This device doesn't support calls. Ask caregiver for help."
+          }
+        }
+      }
+    },
+    "待审核" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pending Review"
+          }
+        }
+      }
+    },
+    "忘了" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forgot"
+          }
+        }
+      }
+    },
+    "忽略" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dismiss"
+          }
+        }
+      }
+    },
+    "患者" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patient"
+          }
+        }
+      }
+    },
+    "患者完成练习后会在这里显示" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Will appear after patient completes practice"
+          }
+        }
+      }
+    },
+    "患者界面模式" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patient Interface Mode"
+          }
+        }
+      }
+    },
+    "患者记录的内容会出现在这里" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patient's recorded content will appear here"
+          }
+        }
+      }
+    },
+    "情况说明" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Situation"
+          }
+        }
+      }
+    },
+    "想一想" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Think"
+          }
+        }
+      }
+    },
+    "我是患者" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I'm a Patient"
+          }
+        }
+      }
+    },
+    "我是照护者" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I'm a Caregiver"
+          }
+        }
+      }
+    },
+    "房间信息" : {
+
+    },
+    "扩展中" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Extending"
+          }
+        }
+      }
+    },
+    "扫描：%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scanned: %@"
+          }
+        }
+      }
+    },
+    "扫描中断：%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scan interrupted: %@"
+          }
+        }
+      }
+    },
+    "扫描暂停，请返回继续" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scan paused, return to continue"
+          }
+        }
+      }
+    },
+    "扫描空间" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scan Space"
+          }
+        }
+      }
+    },
+    "批准" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Approve"
+          }
+        }
+      }
+    },
+    "找一找" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Find"
+          }
+        }
+      }
+    },
+    "找到了！跟着标记走" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Found! Follow the marker"
+          }
+        }
+      }
+    },
+    "找回已记录的物品" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Find recorded items"
+          }
+        }
+      }
+    },
+    "拨打" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Call"
+          }
+        }
+      }
+    },
+    "按住说话" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hold to speak"
+          }
+        }
+      }
+    },
+    "接受" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accept"
+          }
+        }
+      }
+    },
+    "提示" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Info"
+          }
+        }
+      }
+    },
+    "插座" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Outlet"
+          }
+        }
+      }
+    },
+    "搜索中..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Searching..."
+          }
+        }
+      }
+    },
+    "摄像头：%@" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Camera: %@"
+          }
+        }
+      }
+    },
+    "操作" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Actions"
+          }
+        }
+      }
+    },
+    "收到" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Got it"
+          }
+        }
+      }
+    },
+    "效果不错" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Well done"
+          }
+        }
+      }
+    },
+    "新增联系人" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add Contact"
+          }
+        }
+      }
+    },
+    "新增计划" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add Plan"
+          }
+        }
+      }
+    },
+    "无样本图片" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No sample images"
+          }
+        }
+      }
+    },
+    "无法启动录音" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cannot start recording"
+          }
+        }
+      }
+    },
+    "无法启动麦克风" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cannot start microphone"
+          }
+        }
+      }
+    },
+    "无法放置空间锚点" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cannot place spatial anchor"
+          }
+        }
+      }
+    },
+    "无法检测到面部特征点，请正对镜头" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cannot detect facial landmarks, face the camera"
+          }
+        }
+      }
+    },
+    "无法获取相机位置" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cannot get camera position"
+          }
+        }
+      }
+    },
+    "无法获取相机画面" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cannot access camera frame"
+          }
+        }
+      }
+    },
+    "日期格式_今天" : {
+      "comment" : "DateFormatter format for today's date",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Today HH:mm"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今天 HH:mm"
+          }
+        }
+      }
+    },
+    "日期格式_其他" : {
+      "comment" : "DateFormatter format for other dates",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "M/d HH:mm"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "M月d日 HH:mm"
+          }
+        }
+      }
+    },
+    "日期格式_昨天" : {
+      "comment" : "DateFormatter format for yesterday's date",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yesterday HH:mm"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "昨天 HH:mm"
+          }
+        }
+      }
+    },
+    "时间设置" : {
+
+    },
+    "昨天" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yesterday"
+          }
+        }
+      }
+    },
+    "是否拨打电话？" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Make a call?"
+          }
+        }
+      }
+    },
+    "是否要给%@打电话？" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Call %@?"
+          }
+        }
+      }
+    },
+    "暂无关联设备" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No associated devices"
+          }
+        }
+      }
+    },
+    "暂无已保存的物品" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No saved items"
+          }
+        }
+      }
+    },
+    "暂无建议" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Suggestions"
+          }
+        }
+      }
+    },
+    "暂无房间" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Rooms"
+          }
+        }
+      }
+    },
+    "暂无样本" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Samples"
+          }
+        }
+      }
+    },
+    "暂无练习卡片" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No practice cards"
+          }
+        }
+      }
+    },
+    "暂无练习记录" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Practice Records"
+          }
+        }
+      }
+    },
+    "暂无联系人" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Contacts"
+          }
+        }
+      }
+    },
+    "暂无自动生成的卡片" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No auto-generated cards"
+          }
+        }
+      }
+    },
+    "暂无自定义卡片" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No custom cards"
+          }
+        }
+      }
+    },
+    "暂无计划" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Plans"
+          }
+        }
+      }
+    },
+    "暂无记忆" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Memories"
+          }
+        }
+      }
+    },
+    "更正" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Correct"
+          }
+        }
+      }
+    },
+    "更正内容" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corrected Content"
+          }
+        }
+      }
+    },
+    "更正原因（可选）" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reason for Correction (optional)"
+          }
+        }
+      }
+    },
+    "更正后的内容" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corrected content"
+          }
+        }
+      }
+    },
+    "更正记忆" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Correct Memory"
+          }
+        }
+      }
+    },
+    "服用 %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Take %@"
+          }
+        }
+      }
+    },
+    "服药时间" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Medication Time"
+          }
+        }
+      }
+    },
+    "未分配" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unassigned"
+          }
+        }
+      }
+    },
+    "未分配设备" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unassigned Devices"
+          }
+        }
+      }
+    },
+    "未发现 HomeKit 房间" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No HomeKit rooms found"
+          }
+        }
+      }
+    },
+    "未完成" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Incomplete"
+          }
+        }
+      }
+    },
+    "未就绪" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not Ready"
+          }
+        }
+      }
+    },
+    "未扫描" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not Scanned"
+          }
+        }
+      }
+    },
+    "未检测到人脸" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No face detected"
+          }
+        }
+      }
+    },
+    "未知" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown"
+          }
+        }
+      }
+    },
+    "未知位置" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown location"
+          }
+        }
+      }
+    },
+    "未识别到已建档房间" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No recorded room detected"
+          }
+        }
+      }
+    },
+    "未配置 EverMemOS API" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EverMemOS API not configured"
+          }
+        }
+      }
+    },
+    "本" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "this"
+          }
+        }
+      }
+    },
+    "本地" : {
+
+    },
+    "本地模式需输入 Mac 局域网 IP（非 localhost），如 http://192.168.1.x:1995" : {
+
+    },
+    "松开发送" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Release to send"
+          }
+        }
+      }
+    },
+    "样本充足，可以生成特征" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sufficient samples, ready to generate features"
+          }
+        }
+      }
+    },
+    "样本照片" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sample Photos"
+          }
+        }
+      }
+    },
+    "根据联系人、物品和用药计划自动生成" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auto-generated from contacts, items, and medication plans"
+          }
+        }
+      }
+    },
+    "检测到人脸，但未匹配到已注册的联系人" : {
+
+    },
+    "检测到多张人脸，请确保画面中只有一人" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Multiple faces detected, ensure only one person in frame"
+          }
+        }
+      }
+    },
+    "模型推理输出缺失" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Model inference output missing"
+          }
+        }
+      }
+    },
+    "模式" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mode"
+          }
+        }
+      }
+    },
+    "欢迎使用" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome"
+          }
+        }
+      }
+    },
+    "正在为你拨打%@。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calling %@..."
+          }
+        }
+      }
+    },
+    "正在保存..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saving..."
+          }
+        }
+      }
+    },
+    "正在保存物品位置..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saving item location..."
+          }
+        }
+      }
+    },
+    "正在保存空间地图..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saving spatial map..."
+          }
+        }
+      }
+    },
+    "正在保存空间地图…" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saving spatial map..."
+          }
+        }
+      }
+    },
+    "正在初始化" : {
+
+    },
+    "正在初始化..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Initializing..."
+          }
+        }
+      }
+    },
+    "正在加载已有空间地图..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading existing spatial map..."
+          }
+        }
+      }
+    },
+    "正在启动..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Initializing..."
+          }
+        }
+      }
+    },
+    "正在启动相机..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Starting camera..."
+          }
+        }
+      }
+    },
+    "正在搜索 HomeKit 设备…" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Searching for HomeKit devices..."
+          }
+        }
+      }
+    },
+    "正在搜索已保存的位置，请慢慢环顾四周..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Searching for saved location, look around slowly..."
+          }
+        }
+      }
+    },
+    "正在搜索空间特征，请慢慢环顾四周..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Searching for spatial features, look around slowly..."
+          }
+        }
+      }
+    },
+    "正在生成特征..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Generating features..."
+          }
+        }
+      }
+    },
+    "正在识别房间..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detecting room..."
+          }
+        }
+      }
+    },
+    "正在重新定位" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Relocalizing"
+          }
+        }
+      }
+    },
+    "正确率 %lld%%" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accuracy %lld%%"
+          }
+        }
+      }
+    },
+    "每天 %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Every day %@"
+          }
+        }
+      }
+    },
+    "每日回忆" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daily Recall"
+          }
+        }
+      }
+    },
+    "每日答题" : {
+
+    },
+    "每日答题 ●" : {
+
+    },
+    "每日重复" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Repeat Daily"
+          }
+        }
+      }
+    },
+    "没关系，多练练就好了" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No worries, practice makes perfect"
+          }
+        }
+      }
+    },
+    "没有已保存的空间地图" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No saved spatial map"
+          }
+        }
+      }
+    },
+    "没有检测到人脸" : {
+
+    },
+    "注入演示数据" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inject Demo Data"
+          }
+        }
+      }
+    },
+    "注册人脸" : {
+
+    },
+    "测试连接" : {
+
+    },
+    "浴室" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bathroom"
+          }
+        }
+      }
+    },
+    "添加" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add"
+          }
+        }
+      }
+    },
+    "添加备注..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add notes..."
+          }
+        }
+      }
+    },
+    "添加自定义卡片" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add Custom Card"
+          }
+        }
+      }
+    },
+    "演示" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Demo"
+          }
+        }
+      }
+    },
+    "演示数据已注入" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Demo Data Injected"
+          }
+        }
+      }
+    },
+    "点击下方按钮开始采集人脸样本" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap button below to start face sample collection"
+          }
+        }
+      }
+    },
+    "点击卡片查看答案" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap card to see answer"
+          }
+        }
+      }
+    },
+    "点击右上角添加家人或紧急联系人" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap + to add family or emergency contacts"
+          }
+        }
+      }
+    },
+    "点击右上角添加房间并扫描空间" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap + to add a room and scan the space"
+          }
+        }
+      }
+    },
+    "点击右上角添加用药计划" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap + to add a medication plan"
+          }
+        }
+      }
+    },
+    "照护者" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Caregiver"
+          }
+        }
+      }
+    },
+    "照护者创建的用药计划" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Medication plan created by caregiver"
+          }
+        }
+      }
+    },
+    "照护者模式" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Caregiver Mode"
+          }
+        }
+      }
+    },
+    "版本" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version"
+          }
+        }
+      }
+    },
+    "特征不够丰富，请扫描更多区域" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Features insufficient, scan more areas"
+          }
+        }
+      }
+    },
+    "特征已保存（v%lld，%lld张样本）" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Features saved (v%1$lld, %2$lld samples)"
+          }
+        }
+      }
+    },
+    "环境特征不足" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Insufficient features"
+          }
+        }
+      }
+    },
+    "环境特征不足，试试光线更好的地方" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Insufficient features, try better lighting"
+          }
+        }
+      }
+    },
+    "生成失败：%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Generation failed: %@"
+          }
+        }
+      }
+    },
+    "生成建议失败：%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Failed to generate suggestions: %@"
+          }
+        }
+      }
+    },
+    "生成特征" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Generate Features"
+          }
+        }
+      }
+    },
+    "用于「问一问」AI 对话功能" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "For the \"Ask\" AI chat feature"
+          }
+        }
+      }
+    },
+    "用于摄像头自动识别服药行为" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "For camera auto-detection of medication behavior"
+          }
+        }
+      }
+    },
+    "电话" : {
+
+    },
+    "电话号码" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Phone Number"
+          }
+        }
+      }
+    },
+    "相关证据" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Related Evidence"
+          }
+        }
+      }
+    },
+    "看到：" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seeing: "
+          }
+        }
+      }
+    },
+    "真实姓名（例：Annie）" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Real Name (e.g., Annie)"
+          }
+        }
+      }
+    },
+    "确定" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        }
+      }
+    },
+    "确认" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirm"
+          }
+        }
+      }
+    },
+    "确认拨号" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirm Call"
+          }
+        }
+      }
+    },
+    "确认操作" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirm Action"
+          }
+        }
+      }
+    },
+    "确认重置" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirm Reset"
+          }
+        }
+      }
+    },
+    "禁用后此卡片不会出现在练习中" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This card won't appear in practice when disabled"
+          }
+        }
+      }
+    },
+    "离线" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Offline"
+          }
+        }
+      }
+    },
+    "移动过快" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moving too fast"
+          }
+        }
+      }
+    },
+    "空间不可用，请看护者重新扫描该房间" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spatial map unavailable, caregiver please rescan room"
+          }
+        }
+      }
+    },
+    "空间地图不可用，请看护者重新扫描该房间" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spatial map unavailable, caregiver please rescan room"
+          }
+        }
+      }
+    },
+    "空间建档" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rooms"
+          }
+        }
+      }
+    },
+    "空间扫描" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Space Scan"
+          }
+        }
+      }
+    },
+    "等待地图就绪..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waiting for map..."
+          }
+        }
+      }
+    },
+    "等待相机就绪..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waiting for camera..."
+          }
+        }
+      }
+    },
+    "等待追踪稳定…" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waiting for stable tracking..."
+          }
+        }
+      }
+    },
+    "答对 %lld / %lld 题" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Got %1$lld / %2$lld correct"
+          }
+        }
+      }
+    },
+    "答案" : {
+
+    },
+    "管理人脸" : {
+
+    },
+    "练习完成！" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Practice complete!"
+          }
+        }
+      }
+    },
+    "继续扫描，覆盖门口和主要家具" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continue scanning, cover doorways and main furniture"
+          }
+        }
+      }
+    },
+    "继续朝标记方向走" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continue toward marker"
+          }
+        }
+      }
+    },
+    "继续采集" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continue Collection"
+          }
+        }
+      }
+    },
+    "继续靠近" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep approaching"
+          }
+        }
+      }
+    },
+    "编辑" : {
+
+    },
+    "置信度 %lld%%" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confidence %lld%%"
+          }
+        }
+      }
+    },
+    "联系人" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contacts"
+          }
+        }
+      }
+    },
+    "联系人信息" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contact Info"
+          }
+        }
+      }
+    },
+    "自动生成" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auto-generated"
+          }
+        }
+      }
+    },
+    "自定义" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Custom"
+          }
+        }
+      }
+    },
+    "药物信息" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Medication Info"
+          }
+        }
+      }
+    },
+    "药物名称" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Medication Name"
+          }
+        }
+      }
+    },
+    "融合模式" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Merged Mode"
+          }
+        }
+      }
+    },
+    "融合模式：AR 画面常驻，底部切换功能。分离模式：三个功能独立入口，更简洁。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Merged: persistent AR view, switch at bottom. Split: three separate entries, cleaner."
+          }
+        }
+      }
+    },
+    "见到了%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saw %@"
+          }
+        }
+      }
+    },
+    "见到了%@（%@）" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saw %1$@ (%2$@)"
+          }
+        }
+      }
+    },
+    "角色" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Role"
+          }
+        }
+      }
+    },
+    "解锁照护者模式" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unlock caregiver mode"
+          }
+        }
+      }
+    },
+    "计划" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plans"
+          }
+        }
+      }
+    },
+    "计划时间：%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scheduled: %@"
+          }
+        }
+      }
+    },
+    "记一记" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Record"
+          }
+        }
+      }
+    },
+    "记录物品放置位置" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Record item locations"
+          }
+        }
+      }
+    },
+    "记得" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remember"
+          }
+        }
+      }
+    },
+    "记忆审核" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memory Review"
+          }
+        }
+      }
+    },
+    "设置" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        }
+      }
+    },
+    "设置4位PIN码" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Set 4-digit PIN"
+          }
+        }
+      }
+    },
+    "识别中…" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recognizing..."
+          }
+        }
+      }
+    },
+    "识别失败" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recognition failed"
+          }
+        }
+      }
+    },
+    "语音识别不可用" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Speech recognition unavailable"
+          }
+        }
+      }
+    },
+    "语音问答记忆助手" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voice Q&A memory assistant"
+          }
+        }
+      }
+    },
+    "请在下方「HomeKit 房间绑定」中关联 HomeKit 房间以显示设备。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Associate HomeKit rooms in \"HomeKit Room Binding\" below to show devices."
+          }
+        }
+      }
+    },
+    "请在设置中允许语音识别权限" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please enable speech recognition in Settings"
+          }
+        }
+      }
+    },
+    "请将人脸移至画面中央" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Move face to center of frame"
+          }
+        }
+      }
+    },
+    "请慢一点移动手机" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Move phone more slowly"
+          }
+        }
+      }
+    },
+    "请慢慢环顾房间..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slowly look around the room..."
+          }
+        }
+      }
+    },
+    "请让照护者添加联系人、物品或用药计划" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Have caregiver add contacts, items, or medications"
+          }
+        }
+      }
+    },
+    "请选择您的角色" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please select your role"
+          }
+        }
+      }
+    },
+    "质量良好，可以拍摄" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Good quality, ready to capture"
+          }
+        }
+      }
+    },
+    "质量达标，可以保存" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quality met, ready to save"
+          }
+        }
+      }
+    },
+    "越来越近了" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Getting closer"
+          }
+        }
+      }
+    },
+    "距离：%.1f 米" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Distance: %.1f m"
+          }
+        }
+      }
+    },
+    "跟踪正常，对准物品拍照" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tracking normal, aim at item"
+          }
+        }
+      }
+    },
+    "输入 emoji" : {
+
+    },
+    "输入PIN码" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter PIN"
+          }
+        }
+      }
+    },
+    "返回" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Back"
+          }
+        }
+      }
+    },
+    "返回对话" : {
+
+    },
+    "这个电话号码格式不正确，暂时无法拨打。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invalid phone number format."
+          }
+        }
+      }
+    },
+    "这是%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This is %@"
+          }
+        }
+      }
+    },
+    "这是您的%@，%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This is your %1$@, %2$@"
+          }
+        }
+      }
+    },
+    "追踪受限" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tracking limited"
+          }
+        }
+      }
+    },
+    "追踪正常，对准物品拍照" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tracking normal, aim at item"
+          }
+        }
+      }
+    },
+    "追踪正常，点击屏幕放置标记" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tracking normal, tap to place marker"
+          }
+        }
+      }
+    },
+    "选择哪些 HomeKit 房间的设备属于此房间。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select which HomeKit rooms' devices belong to this room."
+          }
+        }
+      }
+    },
+    "选择房间" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select Room"
+          }
+        }
+      }
+    },
+    "选择房间图标" : {
+
+    },
+    "选择要找的物品" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select item to find"
+          }
+        }
+      }
+    },
+    "部署模式" : {
+
+    },
+    "重新扫描" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rescan"
+          }
+        }
+      }
+    },
+    "重新选择" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose Again"
+          }
+        }
+      }
+    },
+    "重置数据" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reset Data"
+          }
+        }
+      }
+    },
+    "重要" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Important"
+          }
+        }
+      }
+    },
+    "错误" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
+          }
+        }
+      }
+    },
+    "门磁传感器" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contact Sensor"
+          }
+        }
+      }
+    },
+    "问一问" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ask"
+          }
+        }
+      }
+    },
+    "问题" : {
+
+    },
+    "需要验证身份" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Identity verification required"
+          }
+        }
+      }
+    },
+    "需重扫" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Needs Rescan"
+          }
+        }
+      }
+    },
+    "麦克风暂不可用，请稍后重试" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Microphone unavailable, try again later"
+          }
+        }
+      }
+    },
+    "默认" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Default"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
