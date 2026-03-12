@@ -5,7 +5,7 @@ import Vision
 import Accelerate
 import os.log
 
-private let logger = Logger(subsystem: "com.MrPolpo.Memo", category: "FaceEmbedding")
+private let logger = Logger(subsystem: "com.MrPolpo.MemoCare", category: "FaceEmbedding")
 
 /// CoreML-based face embedding service using ArcFace (w600k_r50).
 /// Generates 512-dim L2-normalized embeddings from aligned face images.

@@ -2,7 +2,7 @@ import Foundation
 import os.log
 import EverMemOSKit
 
-private let logger = Logger(subsystem: "com.MrPolpo.Memo", category: "ChatVM")
+private let logger = Logger(subsystem: "com.MrPolpo.MemoCare", category: "ChatVM")
 
 // MARK: - Tool Calling Types
 

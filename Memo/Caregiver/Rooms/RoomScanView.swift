@@ -4,7 +4,7 @@ import RealityKit
 import ARKit
 import os.log
 
-private let logger = Logger(subsystem: "com.MrPolpo.Memo", category: "RoomScanView")
+private let logger = Logger(subsystem: "com.MrPolpo.MemoCare", category: "RoomScanView")
 
 /// 全屏 AR 扫描页 — 看护者端按房间建立世界地图
 struct RoomScanView: View {

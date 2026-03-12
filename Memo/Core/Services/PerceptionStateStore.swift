@@ -1,7 +1,7 @@
 import Foundation
 import os.log
 
-private let logger = Logger(subsystem: "com.MrPolpo.Memo", category: "StateStore")
+private let logger = Logger(subsystem: "com.MrPolpo.MemoCare", category: "StateStore")
 
 /// Central state store for perception pipeline results.
 /// Consumed by UI overlays and ChatViewModel for context-aware responses.

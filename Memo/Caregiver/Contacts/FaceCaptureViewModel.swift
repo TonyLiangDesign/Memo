@@ -4,7 +4,7 @@ import CoreGraphics
 import CoreImage
 import os.log
 
-private let logger = Logger(subsystem: "com.MrPolpo.Memo", category: "FaceCapture")
+private let logger = Logger(subsystem: "com.MrPolpo.MemoCare", category: "FaceCapture")
 
 /// Thread-safe frame buffer accessed from both processing queue and main actor.
 private final class FrameBuffer: @unchecked Sendable {

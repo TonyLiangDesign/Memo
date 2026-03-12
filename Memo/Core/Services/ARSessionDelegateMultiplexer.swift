@@ -1,7 +1,7 @@
 import ARKit
 import os.log
 
-private let logger = Logger(subsystem: "com.MrPolpo.Memo", category: "ARMultiplexer")
+private let logger = Logger(subsystem: "com.MrPolpo.MemoCare", category: "ARMultiplexer")
 
 /// Forwards ARSessionDelegate callbacks to multiple registered delegates.
 /// Solves ARKit's single-delegate limitation by acting as a fan-out proxy.

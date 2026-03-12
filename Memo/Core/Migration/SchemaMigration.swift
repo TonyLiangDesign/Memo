@@ -2,7 +2,7 @@ import Foundation
 import SwiftData
 import os.log
 
-private let logger = Logger(subsystem: "com.MrPolpo.Memo", category: "SchemaMigration")
+private let logger = Logger(subsystem: "com.MrPolpo.MemoCare", category: "SchemaMigration")
 
 struct SchemaMigration {
 

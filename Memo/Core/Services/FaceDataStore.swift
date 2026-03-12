@@ -4,7 +4,7 @@ import ImageIO
 import UniformTypeIdentifiers
 import os.log
 
-private let logger = Logger(subsystem: "com.MrPolpo.Memo", category: "FaceDataStore")
+private let logger = Logger(subsystem: "com.MrPolpo.MemoCare", category: "FaceDataStore")
 
 /// File-system store for face samples and reference embeddings.
 /// Layout: ~/Documents/FaceData/{contactID}/

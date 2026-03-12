@@ -5,7 +5,7 @@ import ARKit
 import EverMemOSKit
 import os.log
 
-private let logger = Logger(subsystem: "com.MrPolpo.Memo", category: "LiveMode")
+private let logger = Logger(subsystem: "com.MrPolpo.MemoCare", category: "LiveMode")
 
 /// 患者主界面（融合模式）：全屏 ARView 常驻，默认对话模式
 /// 记一记、找一找、答题收纳到右上角 "..." 菜单，底部无按钮

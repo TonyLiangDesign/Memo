@@ -3,7 +3,7 @@ import UIKit
 import CoreImage
 import os.log
 
-private let logger = Logger(subsystem: "com.MrPolpo.Memo", category: "GeminiMedication")
+private let logger = Logger(subsystem: "com.MrPolpo.MemoCare", category: "GeminiMedication")
 
 /// Result from Gemini item recognition
 struct GeminiItemResult: Equatable {

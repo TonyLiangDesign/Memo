@@ -1,7 +1,7 @@
 import ARKit
 import os.log
 
-private let logger = Logger(subsystem: "com.MrPolpo.Memo", category: "PerceptionOrchestrator")
+private let logger = Logger(subsystem: "com.MrPolpo.MemoCare", category: "PerceptionOrchestrator")
 
 @Observable @MainActor
 final class PerceptionOrchestrator {

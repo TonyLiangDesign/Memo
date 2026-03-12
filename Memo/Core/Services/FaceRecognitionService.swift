@@ -4,7 +4,7 @@ import CoreVideo
 import ImageIO
 import os.log
 
-private let logger = Logger(subsystem: "com.MrPolpo.Memo", category: "FaceRecognition")
+private let logger = Logger(subsystem: "com.MrPolpo.MemoCare", category: "FaceRecognition")
 
 // MARK: - Face Match
 

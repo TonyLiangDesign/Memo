@@ -1,7 +1,7 @@
 import ARKit
 import os.log
 
-private let logger = Logger(subsystem: "com.MrPolpo.Memo", category: "FrameProvider")
+private let logger = Logger(subsystem: "com.MrPolpo.MemoCare", category: "FrameProvider")
 
 // MARK: - Frame Input
 

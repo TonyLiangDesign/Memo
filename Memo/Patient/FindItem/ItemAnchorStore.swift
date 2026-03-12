@@ -3,7 +3,7 @@ import Foundation
 import SwiftData
 import os.log
 
-private let logger = Logger(subsystem: "com.MrPolpo.Memo", category: "ItemAnchorStore")
+private let logger = Logger(subsystem: "com.MrPolpo.MemoCare", category: "ItemAnchorStore")
 
 // MARK: - Item Anchor Store (SwiftData)
 

@@ -7,7 +7,7 @@ import EverMemOSKit
 import UIKit
 #endif
 
-private let logger = Logger(subsystem: "com.MrPolpo.Memo", category: "HomeKitPassive")
+private let logger = Logger(subsystem: "com.MrPolpo.MemoCare", category: "HomeKitPassive")
 
 /// Represents a HomeKit accessory discovered in the user's home for UI display.
 struct DiscoveredAccessory: Identifiable, Equatable {

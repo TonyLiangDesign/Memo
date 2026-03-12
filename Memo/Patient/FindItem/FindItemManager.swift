@@ -4,7 +4,7 @@ import SwiftData
 import SwiftUI
 import os.log
 
-private let logger = Logger(subsystem: "com.MrPolpo.Memo", category: "FindItemManager")
+private let logger = Logger(subsystem: "com.MrPolpo.MemoCare", category: "FindItemManager")
 
 /// AR session manager for the Find Item feature.
 /// Handles Place mode (anchor placement + world map save)

@@ -2,7 +2,7 @@ import SwiftUI
 import SwiftData
 import os.log
 
-private let logger = Logger(subsystem: "com.MrPolpo.Memo", category: "MemoApp")
+private let logger = Logger(subsystem: "com.MrPolpo.MemoCare", category: "MemoApp")
 
 @main
 struct MemoApp: App {
