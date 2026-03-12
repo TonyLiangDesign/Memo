@@ -8,11 +8,19 @@ It currently runs on iPhone as a development prototype. However, a handheld phon
 
 The app has two distinct interfaces: a simplified **Patient Mode** for daily use, and a secure **Caregiver Mode** for care management.
 
-## <img src="assets/AppIcon256.png" width="28" align="top"> MemoCare on TestFlight
+## MemoCare on TestFlight
+
+<p align="center">
+  <img src="assets/AppIcon256.png" width="128" alt="MemoCare Icon">
+</p>
 
 The app is available for beta testing via TestFlight.
 
-[![Download on TestFlight](https://img.shields.io/badge/TestFlight-Join%20Beta-blue?logo=apple&logoColor=white)](https://testflight.apple.com/join/XXXXXX)
+<p align="center">
+  <a href="https://testflight.apple.com/join/XXXXXX">
+    <img src="https://img.shields.io/badge/TestFlight-Join%20Beta-blue?style=for-the-badge&logo=apple&logoColor=white" alt="Download on TestFlight">
+  </a>
+</p>
 
 > **Requirements:** iPhone running iOS 26 or later.
 > Tap the link above to install. API keys are auto-configured on first launch (available through end of April 2026).
