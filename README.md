@@ -1,12 +1,21 @@
-# ![Memo](assets/hero.jpg)
+# ![MemoCare](assets/hero.jpg)
 
-# Memo — Alzheimer's Memory Assistant
+# MemoCare — Alzheimer's Memory Assistant
 
-Memo is an experimental project exploring how augmented reality, voice interaction, and AI-powered long-term memory can work together to support people living with Alzheimer's disease.
+MemoCare is an experimental project exploring how augmented reality, voice interaction, and AI-powered long-term memory can work together to support people living with Alzheimer's disease.
 
 It currently runs on iPhone as a development prototype. However, a handheld phone is not the ideal form factor for patients with cognitive decline — the vision for this project is that these capabilities will truly shine on **future AR glasses**, where memory assistance becomes ambient, always-on, and hands-free.
 
 The app has two distinct interfaces: a simplified **Patient Mode** for daily use, and a secure **Caregiver Mode** for care management.
+
+## <img src="assets/AppIcon256.png" width="28" align="top"> MemoCare on TestFlight
+
+The app is available for beta testing via TestFlight.
+
+[![Download on TestFlight](https://img.shields.io/badge/TestFlight-Join%20Beta-blue?logo=apple&logoColor=white)](https://testflight.apple.com/join/XXXXXX)
+
+> **Requirements:** iPhone running iOS 26 or later.
+> Tap the link above to install. API keys are auto-configured on first launch (available through end of April 2026).
 
 ---
 
@@ -14,9 +23,9 @@ The app has two distinct interfaces: a simplified **Patient Mode** for daily use
 
 The patient interface is designed to be **radically simple** — no menus, no text input, no complex navigation. Just a full-screen camera with a few large buttons. The patient only needs to tap or speak. Everything else happens automatically behind the scenes.
 
-At its core, Memo is a **memory system**. Everything in the patient interface exists to help record, retrieve, and reinforce the memories that Alzheimer's gradually takes away.
+At its core, MemoCare is a **memory system**. Everything in the patient interface exists to help record, retrieve, and reinforce the memories that Alzheimer's gradually takes away.
 
-Powered by [EverMemOS](https://github.com/EverMind-AI/EverMemOS), Memo builds a persistent, structured long-term memory for each patient — not a chat history, but a living knowledge base of who they know, what they did, where they put things, and when they took their medication. Unlike LLM context windows that forget after each session, this memory accumulates over days and weeks, enabling the kind of precise, personalized care that Alzheimer's patients need.
+Powered by [EverMemOS](https://github.com/EverMind-AI/EverMemOS), MemoCare builds a persistent, structured long-term memory for each patient — not a chat history, but a living knowledge base of who they know, what they did, where they put things, and when they took their medication. Unlike LLM context windows that forget after each session, this memory accumulates over days and weeks, enabling the kind of precise, personalized care that Alzheimer's patients need.
 
 ### Recording Memories
 
@@ -26,7 +35,7 @@ Memories flow into the system from multiple sources — some require a single ta
 
 **Face Recognition** — A dedicated button identifies the person in front of the camera using an on-device [ArcFace](https://github.com/deepinsight/insightface) CoreML model. It generates a 512-dimensional face embedding, matches it against enrolled contacts, and announces the result by voice ("This is your daughter, Annie"). Each encounter is recorded as a memory.
 
-**Smart Home Sensors** — Memo integrates with HomeKit-compatible accessories to passively observe daily behavior with no manual input:
+**Smart Home Sensors** — MemoCare integrates with HomeKit-compatible accessories to passively observe daily behavior with no manual input:
 
 ![Smart Home Awareness](assets/WatchingTV.jpg)
 - **Motion sensors** (e.g., Eve Motion) track which rooms the patient visits and when
@@ -120,7 +129,7 @@ Build a spatial model of the patient's living environment:
 
 ## EverMemOS — Memory Backend
 
-Memo connects to [EverMemOS](https://github.com/EverMind-AI/EverMemOS), a long-term memory system for conversational AI agents. It stores, indexes, and retrieves the patient's memories — enabling the chat assistant to give personalized, context-aware answers.
+MemoCare connects to [EverMemOS](https://github.com/EverMind-AI/EverMemOS), a long-term memory system for conversational AI agents. It stores, indexes, and retrieves the patient's memories — enabling the chat assistant to give personalized, context-aware answers.
 
 Two deployment options are available:
 
@@ -176,7 +185,7 @@ In the app's Settings screen, configure the services you need:
 
 ## Privacy & Permissions
 
-Memo requests the following system permissions. Each can be reviewed and revoked at any time in iOS Settings.
+MemoCare requests the following system permissions. Each can be reviewed and revoked at any time in iOS Settings.
 
 | Permission | Used For |
 |------------|----------|

@@ -138,6 +138,80 @@ final class APIKeyStore {
         hasGeminiKey = false
     }
 
+    // MARK: - Remote Config Import
+
+    struct RemoteConfig: Codable {
+        let version: Int
+        let app: String
+        let keys: [String: String]
+    }
+
+    enum ImportError: LocalizedError {
+        case invalidURL
+        case networkError(Error)
+        case invalidFormat
+        case wrongApp(String)
+
+        var errorDescription: String? {
+            switch self {
+            case .invalidURL: return "无效的 URL"
+            case .networkError(let e): return "网络错误: \(e.localizedDescription)"
+            case .invalidFormat: return "配置格式无效"
+            case .wrongApp(let app): return "配置属于 \(app)，不适用于本 App"
+            }
+        }
+    }
+
+    func importFromURL(_ urlString: String) async throws -> Int {
+        guard let url = URL(string: urlString.trimmingCharacters(in: .whitespacesAndNewlines)) else {
+            throw ImportError.invalidURL
+        }
+
+        let data: Data
+        do {
+            let (d, _) = try await URLSession.shared.data(from: url)
+            data = d
+        } catch {
+            throw ImportError.networkError(error)
+        }
+
+        guard let config = try? JSONDecoder().decode(RemoteConfig.self, from: data) else {
+            throw ImportError.invalidFormat
+        }
+
+        guard config.app.lowercased() == "memocare" else {
+            throw ImportError.wrongApp(config.app)
+        }
+
+        var imported = 0
+        for (key, value) in config.keys {
+            let trimmed = value.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard !trimmed.isEmpty else { continue }
+            switch key {
+            case "deepseek":
+                saveDeepSeekAPIKey(trimmed)
+                imported += 1
+            case "gemini":
+                saveGeminiAPIKey(trimmed)
+                imported += 1
+            case "evermemos_token":
+                saveEverMemOSToken(trimmed)
+                imported += 1
+            case "evermemos_base_url":
+                saveEverMemOSBaseURL(trimmed)
+                imported += 1
+            case "evermemos_deployment":
+                if let mode = DeploymentProfile(rawValue: trimmed) {
+                    saveDeploymentMode(mode)
+                    imported += 1
+                }
+            default:
+                break
+            }
+        }
+        return imported
+    }
+
     // MARK: - Keychain Helpers
 
     private static func save(key: String, value: String) {

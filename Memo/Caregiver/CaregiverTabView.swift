@@ -1,10 +1,14 @@
 import SwiftUI
+import SwiftData
 
 /// Caregiver tab container — protected by AuthService (biometric/PIN)
 /// AuthService is injected from MemoApp level so auth persists across role switches
 struct CaregiverTabView: View {
     @Environment(AuthService.self) private var authService
     @Environment(RoleManager.self) private var roleManager
+    @Environment(APIKeyStore.self) private var apiKeyStore
+    @Environment(HomeKitPassiveEventService.self) private var homeKitService
+    @Environment(\.modelContext) private var modelContext
 
     var body: some View {
         Group {
@@ -13,6 +17,10 @@ struct CaregiverTabView: View {
             } else {
                 CaregiverAuthView()
             }
+        }
+        .task {
+            let client = apiKeyStore.buildAPIClient()
+            homeKitService.start(context: modelContext, client: client)
         }
     }
 

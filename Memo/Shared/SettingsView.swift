@@ -86,9 +86,15 @@ struct SettingsView: View {
     @State private var everMemOSBaseURL = ""
     @State private var selectedDeployment: DeploymentProfile = .cloud
     @State private var connectionStatus: ConnectionStatus = .idle
+    @State private var configURL = ""
+    @State private var importStatus: ImportStatus = .idle
 
     private enum ConnectionStatus {
         case idle, testing, success, failure
+    }
+
+    private enum ImportStatus: Equatable {
+        case idle, importing, success(Int), failure(String)
     }
 
     var body: some View {
@@ -132,6 +138,36 @@ struct SettingsView: View {
                         onSave: { apiKeyStore.saveGeminiAPIKey($0) },
                         onDelete: { apiKeyStore.deleteGeminiAPIKey() }
                     )
+                }
+
+                Section(header: Text("导入配置"), footer: Text("从 URL 一键导入所有 API Keys。向开发者索取配置链接。")) {
+                    TextField("配置 URL", text: $configURL)
+                        .textInputAutocapitalization(.never)
+                        .autocorrectionDisabled()
+                        .keyboardType(.URL)
+
+                    Button {
+                        importConfig()
+                    } label: {
+                        HStack {
+                            Text("导入")
+                            Spacer()
+                            switch importStatus {
+                            case .idle:
+                                EmptyView()
+                            case .importing:
+                                ProgressView()
+                            case .success(let count):
+                                Label("已导入 \(count) 项", systemImage: "checkmark.circle.fill")
+                                    .foregroundStyle(.green)
+                            case .failure(let msg):
+                                Text(msg)
+                                    .font(.caption)
+                                    .foregroundStyle(.red)
+                            }
+                        }
+                    }
+                    .disabled(configURL.isEmpty || importStatus == .importing)
                 }
 
                 Section("演示") {
@@ -226,6 +262,21 @@ struct SettingsView: View {
                 }
             }
             .disabled(connectionStatus == .testing)
+        }
+    }
+
+    private func importConfig() {
+        importStatus = .importing
+        Task {
+            do {
+                let count = try await apiKeyStore.importFromURL(configURL)
+                importStatus = .success(count)
+                // Refresh local state
+                selectedDeployment = apiKeyStore.deploymentMode
+                everMemOSBaseURL = apiKeyStore.everMemOSBaseURL
+            } catch {
+                importStatus = .failure(error.localizedDescription)
+            }
         }
     }
 

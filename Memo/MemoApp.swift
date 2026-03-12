@@ -74,12 +74,14 @@ struct MemoApp: App {
             .environment(dailyMemoryService)
             .sheet(isPresented: $showSetup) {
                 SetupSheet()
+                    .environment(apiKeyStore)
             }
             .task {
+                // Trigger network permission prompt early
+                _ = try? await URLSession.shared.data(from: URL(string: "https://www.apple.com")!)
+
                 let context = sharedModelContainer.mainContext
                 SchemaMigration.runIfNeeded(context: context)
-                let client = apiKeyStore.buildAPIClient()
-                homeKitPassiveEventService.start(context: context, client: client)
                 dailyMemoryService.checkPendingPractice(context: context)
             }
         }
