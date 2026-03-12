@@ -139,8 +139,9 @@ Connect to a hosted EverMemOS instance using an authentication token.
 
 ### Requirements
 
-- macOS with **Xcode** installed
-- An Apple Developer account (for running on a physical iPhone)
+- **Xcode 26+** on macOS
+- **iOS 26+** on a physical iPhone (AR features require a real device)
+- An Apple Developer account (for deploying to device)
 - **Git LFS** — this repo includes a CoreML model tracked via LFS
 
 ### Clone & Build
@@ -203,9 +204,22 @@ No data is sent to any external service until you explicitly provide API keys or
 
 ---
 
-## Project Status
+## Roadmap
 
-This is an actively evolving research project. Expect breaking changes.
+- Apple Watch companion for medication reminders and quick voice queries
+- On-device LLM fallback for offline chat (no API key needed)
+- Multi-patient support for professional caregivers
+- Smarter HomeKit automation (trigger reminders based on sensor patterns)
+- iPad and Vision Pro optimized layouts
+- English localization (currently Simplified Chinese only)
+
+## Contributing
+
+Contributions are welcome. Please open an issue before submitting a pull request so we can discuss the approach first. Keep code style consistent with the existing codebase.
+
+## License
+
+All rights reserved. This project is not currently licensed for redistribution or reuse. A formal license may be added in the future.
 
 ## Acknowledgements
 
