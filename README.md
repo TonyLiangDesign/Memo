@@ -211,7 +211,7 @@ No data is sent to any external service until you explicitly provide API keys or
 - Multi-patient support for professional caregivers
 - Smarter HomeKit automation (trigger reminders based on sensor patterns)
 - iPad and Vision Pro optimized layouts
-- English localization (currently Simplified Chinese only)
+- Additional language support beyond the current Chinese and English
 
 ## Contributing
 
