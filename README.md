@@ -18,16 +18,16 @@ Powered by [EverMemOS](https://github.com/EverMind-AI/EverMemOS), Memo builds a 
 
 Memories flow into the system from multiple sources — some require a single tap, others happen automatically in the background.
 
-**Item Recording** — One tap captures what the patient is looking at. The camera recognizes the item via Gemini AI (e.g., keys, glasses, medication), saves its position in 3D space with an AR anchor, and associates it with the current room.
+**Item Recording** — One tap captures what the patient is looking at. The camera recognizes the item via Gemini AI (e.g., keys, glasses, medication) and uses ARKit to save its precise position in 3D space as a spatial anchor. The item is associated with the current room and can be relocated later using the saved AR world map.
 
-**Face Recognition** — A dedicated button identifies the person in front of the camera, matches them against enrolled contacts, and announces the result by voice ("This is your daughter, Annie"). Each encounter is recorded as a memory.
+**Face Recognition** — A dedicated button identifies the person in front of the camera using an on-device [ArcFace](https://github.com/deepinsight/insightface) CoreML model. It generates a 512-dimensional face embedding, matches it against enrolled contacts, and announces the result by voice ("This is your daughter, Annie"). Each encounter is recorded as a memory.
 
 **Smart Home Sensors** — Memo integrates with HomeKit-compatible accessories to passively observe daily behavior with no manual input:
 
 ![Smart Home Awareness](assets/WatchingTV.jpg)
 - **Motion sensors** (e.g., Eve Motion) track which rooms the patient visits and when
 - **Smart plugs** (e.g., Eve Energy) detect appliance usage — a kettle, TV, or microwave — logging what the patient does and at what time
-- Works with any HomeKit-compatible accessory — no proprietary hub required
+- Works with any HomeKit-compatible accessory
 
 **Room Awareness** — The app automatically detects which room the patient is in and displays a location badge. This room context helps organize items and provides situational awareness to the AI assistant.
 
