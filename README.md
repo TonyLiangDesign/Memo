@@ -25,6 +25,15 @@ The app is available for beta testing via TestFlight.
 > **Requirements:** iPhone running iOS 26 or later.
 > Tap the link above to install. API keys are auto-configured on first launch (available through end of April 2026).
 
+### Recommended: Download Enhanced Voices
+
+MemoCare uses text-to-speech extensively to communicate with the patient. The default system voices sound robotic — for a much more natural experience, download an **Enhanced** or **Premium** voice:
+
+1. Open **Settings → Accessibility → Spoken Content → Voices**
+2. Select **Chinese (Simplified)** (or your preferred language)
+3. Tap any voice marked **Enhanced** — download it (about 100–400 MB)
+4. Once installed, MemoCare will automatically use the higher-quality voice
+
 ---
 
 ## Patient Mode
