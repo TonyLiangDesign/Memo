@@ -8,9 +8,7 @@ struct RoleSwitcherView: View {
         VStack(spacing: 40) {
             Spacer()
 
-            Image(systemName: "brain.head.profile")
-                .font(.system(size: 80))
-                .foregroundStyle(.tint)
+            AppIconView(size: 100)
 
             Text("欢迎使用")
                 .font(.largeTitle.bold())

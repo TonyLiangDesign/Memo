@@ -19,7 +19,7 @@ final class APIKeyStore {
     init() {
         self.hasEverMemOSToken = Self.load(key: Self.everMemOSTokenKey) != nil
         self.hasDeepSeekKey = Self.load(key: Self.deepSeekKeychainKey) != nil
-        self.hasGeminiKey = Self.load(key: Self.geminiKeychainKey) != nil
+        self.hasGeminiKey = Self.load(key: Self.geminiKeychainKey) != nil || Self.builtInGeminiKey != nil
         let raw = UserDefaults.standard.string(forKey: Self.deploymentModeKey) ?? "cloud"
         self.deploymentMode = DeploymentProfile(rawValue: raw) ?? .cloud
         Self.migrateBaseURLKeyIfNeeded()
@@ -124,8 +124,28 @@ final class APIKeyStore {
 
     // MARK: - Gemini API Key
 
+    /// Returns Keychain-stored key if available, otherwise falls back to built-in key.
     var geminiAPIKey: String? {
-        Self.load(key: Self.geminiKeychainKey)
+        Self.load(key: Self.geminiKeychainKey) ?? Self.builtInGeminiKey
+    }
+
+    // Built-in Gemini key (XOR-obfuscated to avoid plaintext leaks in source/binary)
+    private static let _gm: [UInt8] = [
+        0xA8, 0xF8, 0x1E, 0xF5, 0xCC, 0x86, 0x7E, 0xDB, 0xF6, 0x19,
+        0xA2, 0xF4, 0xAC, 0xF7, 0xE0, 0x09, 0xD8, 0xDB, 0x50, 0x1A,
+        0x16, 0xA1, 0x3D, 0x0B, 0x72, 0x6F, 0xC6, 0x15, 0xEF, 0xB8,
+        0x3A, 0x9C, 0xE5, 0xFF, 0xC2, 0xCC, 0x4E, 0xB3, 0x96
+    ]
+    private static let _gk: [UInt8] = [
+        0xE9, 0xB1, 0x64, 0x94, 0x9F, 0xFF, 0x3C, 0xA2, 0xC4, 0x6A,
+        0x90, 0xC7, 0xE9, 0xBD, 0xBA, 0x3E, 0x8F, 0xB0, 0x09, 0x56,
+        0x42, 0xE8, 0x49, 0x40, 0x1A, 0x5E, 0x99, 0x5D, 0x83, 0xDC,
+        0x50, 0xCB, 0x8B, 0xBA, 0x98, 0xF9, 0x39, 0xFB, 0xCF
+    ]
+    private static var builtInGeminiKey: String? {
+        guard _gm.count == _gk.count else { return nil }
+        let bytes = zip(_gk, _gm).map { $0 ^ $1 }
+        return String(bytes: bytes, encoding: .utf8)
     }
 
     func saveGeminiAPIKey(_ value: String) {
@@ -138,79 +158,7 @@ final class APIKeyStore {
         hasGeminiKey = false
     }
 
-    // MARK: - Remote Config Import
 
-    struct RemoteConfig: Codable {
-        let version: Int
-        let app: String
-        let keys: [String: String]
-    }
-
-    enum ImportError: LocalizedError {
-        case invalidURL
-        case networkError(Error)
-        case invalidFormat
-        case wrongApp(String)
-
-        var errorDescription: String? {
-            switch self {
-            case .invalidURL: return "无效的 URL"
-            case .networkError(let e): return "网络错误: \(e.localizedDescription)"
-            case .invalidFormat: return "配置格式无效"
-            case .wrongApp(let app): return "配置属于 \(app)，不适用于本 App"
-            }
-        }
-    }
-
-    func importFromURL(_ urlString: String) async throws -> Int {
-        guard let url = URL(string: urlString.trimmingCharacters(in: .whitespacesAndNewlines)) else {
-            throw ImportError.invalidURL
-        }
-
-        let data: Data
-        do {
-            let (d, _) = try await URLSession.shared.data(from: url)
-            data = d
-        } catch {
-            throw ImportError.networkError(error)
-        }
-
-        guard let config = try? JSONDecoder().decode(RemoteConfig.self, from: data) else {
-            throw ImportError.invalidFormat
-        }
-
-        guard config.app.lowercased() == "memocare" else {
-            throw ImportError.wrongApp(config.app)
-        }
-
-        var imported = 0
-        for (key, value) in config.keys {
-            let trimmed = value.trimmingCharacters(in: .whitespacesAndNewlines)
-            guard !trimmed.isEmpty else { continue }
-            switch key {
-            case "deepseek":
-                saveDeepSeekAPIKey(trimmed)
-                imported += 1
-            case "gemini":
-                saveGeminiAPIKey(trimmed)
-                imported += 1
-            case "evermemos_token":
-                saveEverMemOSToken(trimmed)
-                imported += 1
-            case "evermemos_base_url":
-                saveEverMemOSBaseURL(trimmed)
-                imported += 1
-            case "evermemos_deployment":
-                if let mode = DeploymentProfile(rawValue: trimmed) {
-                    saveDeploymentMode(mode)
-                    imported += 1
-                }
-            default:
-                break
-            }
-        }
-        return imported
-    }
 
     // MARK: - Keychain Helpers
 
