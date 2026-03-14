@@ -23,7 +23,7 @@ struct DailyMemoryConfigView: View {
         List {
             Section {
                 if autoCards.isEmpty {
-                    Text("暂无自动生成的卡片")
+                    Text(String(localized: "暂无自动生成的卡片"))
                         .foregroundStyle(.secondary)
                 } else {
                     ForEach(autoCards, id: \.cardID) { card in
@@ -32,19 +32,19 @@ struct DailyMemoryConfigView: View {
                 }
             } header: {
                 HStack {
-                    Text("自动生成")
+                    Text(String(localized: "自动生成"))
                     Spacer()
-                    Text("\(autoCards.count) 张")
+                    Text(String(localized: "\(autoCards.count) 张"))
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
             } footer: {
-                Text("根据联系人、物品和用药计划自动生成")
+                Text(String(localized: "根据联系人、物品和用药计划自动生成"))
             }
 
             Section {
                 if customCards.isEmpty {
-                    Text("暂无自定义卡片")
+                    Text(String(localized: "暂无自定义卡片"))
                         .foregroundStyle(.secondary)
                 } else {
                     ForEach(customCards, id: \.cardID) { card in
@@ -54,9 +54,9 @@ struct DailyMemoryConfigView: View {
                 }
             } header: {
                 HStack {
-                    Text("自定义")
+                    Text(String(localized: "自定义"))
                     Spacer()
-                    Button("添加", systemImage: "plus") {
+                    Button(String(localized: "添加"), systemImage: "plus") {
                         showAddCard = true
                     }
                     .font(.caption)
@@ -66,21 +66,21 @@ struct DailyMemoryConfigView: View {
         .sheet(isPresented: $showAddCard) {
             AddMemoryCardView()
         }
-        .alert("确认操作", isPresented: .init(
+        .alert(String(localized: "确认操作"), isPresented: .init(
             get: { cardToToggle != nil },
             set: { if !$0 { cardToToggle = nil } }
         )) {
-            Button("确认") {
+            Button(String(localized: "确认")) {
                 if let card = cardToToggle {
                     card.isEnabled.toggle()
                     try? modelContext.save()
                     cardToToggle = nil
                 }
             }
-            Button("取消", role: .cancel) { cardToToggle = nil }
+            Button(String(localized: "取消"), role: .cancel) { cardToToggle = nil }
         } message: {
             if let card = cardToToggle {
-                Text(card.isEnabled ? "禁用后此卡片不会出现在练习中" : "启用后此卡片将加入练习")
+                Text(card.isEnabled ? String(localized: "禁用后此卡片不会出现在练习中") : String(localized: "启用后此卡片将加入练习"))
             }
         }
     }
@@ -97,7 +97,7 @@ struct DailyMemoryConfigView: View {
                     if card.correctCount + card.incorrectCount > 0 {
                         let total = card.correctCount + card.incorrectCount
                         let rate = Double(card.correctCount) / Double(total)
-                        Text("正确率 \(Int(rate * 100))%")
+                        Text(String(localized: "正确率 \(Int(rate * 100))%"))
                             .font(.caption2)
                             .foregroundStyle(rate >= 0.7 ? .green : .orange)
                     }
@@ -135,21 +135,21 @@ struct AddMemoryCardView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section("问题") {
-                    TextField("例：今天星期几？", text: $question)
+                Section(String(localized: "问题")) {
+                    TextField(String(localized: "例：今天星期几？"), text: $question)
                 }
-                Section("答案") {
-                    TextField("例：星期三", text: $answer)
+                Section(String(localized: "答案")) {
+                    TextField(String(localized: "例：星期三"), text: $answer)
                 }
             }
-            .navigationTitle("添加自定义卡片")
+            .navigationTitle(String(localized: "添加自定义卡片"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("取消") { dismiss() }
+                    Button(String(localized: "取消")) { dismiss() }
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("添加") {
+                    Button(String(localized: "添加")) {
                         let card = MemoryCard(
                             category: .custom,
                             question: question.trimmingCharacters(in: .whitespacesAndNewlines),

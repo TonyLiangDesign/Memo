@@ -342,7 +342,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "HomeKit permissions restricted, enable in system settings"
+            "value": "HomeKit access restricted, please allow in system settings"
           }
         }
       }
@@ -659,7 +659,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "E.g., What day is today?"
+            "value": "e.g., What day is today?"
           }
         }
       }
@@ -669,7 +669,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "E.g., Wednesday"
+            "value": "e.g., Wednesday"
           }
         }
       }
@@ -1174,7 +1174,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "This card will be included in practice when enabled"
+            "value": "This card will be added to practice after enabling"
           }
         }
       }
@@ -2592,7 +2592,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Searching for HomeKit devices..."
+            "value": "Searching for HomeKit devices…"
           }
         }
       }
@@ -2862,7 +2862,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tap + to add a room and scan the space"
+            "value": "Tap + to add room and scan space"
           }
         }
       }
@@ -3112,7 +3112,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "This card won't appear in practice when disabled"
+            "value": "This card will not appear in practice after disabling"
           }
         }
       }
@@ -3163,7 +3163,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Rooms"
+            "value": "Space Mapping"
           }
         }
       }
@@ -4185,6 +4185,66 @@
           "stringUnit": {
             "state": "translated",
             "value": "\\(prefix) Not in use."
+          }
+        }
+      }
+    },
+    "\\(autoCards.count) 张": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "\\(autoCards.count) cards"
+          }
+        }
+      }
+    },
+    "正确率 \\(Int(rate * 100))%": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "\\(Int(rate * 100))% correct"
+          }
+        }
+      }
+    },
+    "建议生成功能暂时不可用": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recommendation generation temporarily unavailable"
+          }
+        }
+      }
+    },
+    "HomeKit 异常：\\(msg)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "HomeKit error: \\(msg)"
+          }
+        }
+      }
+    },
+    "扫描：\\(scanned.formatted(.relative(presentation: .named)))": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scanned: \\(scanned.formatted(.relative(presentation: .named)))"
+          }
+        }
+      }
+    },
+    "\\(deviceCount) 设备": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "\\(deviceCount) devices"
           }
         }
       }

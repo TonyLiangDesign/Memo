@@ -120,19 +120,8 @@ struct RecommendationsView: View {
         isLoading = true
         errorMessage = nil
 
-        guard let client = apiKeyStore.buildAPIClient() else {
-            errorMessage = String(localized: "未配置 EverMemOS API")
-            isLoading = false
-            return
-        }
-
-        let engine = RecommendationEngine(client: client, userID: "patient_001")
-        do {
-            _ = try await engine.generateRecommendations(context: modelContext)
-        } catch {
-            errorMessage = String(localized: "生成建议失败：\(error.localizedDescription)")
-        }
-
+        // RecommendationEngine removed - feature disabled
+        errorMessage = String(localized: "建议生成功能暂时不可用")
         isLoading = false
     }
 

@@ -27,13 +27,13 @@ struct RoomListView: View {
             .overlay {
                 if rooms.isEmpty {
                     ContentUnavailableView(
-                        "暂无房间",
+                        String(localized: "暂无房间"),
                         systemImage: "map",
-                        description: Text("点击右上角添加房间并扫描空间")
+                        description: Text(String(localized: "点击右上角添加房间并扫描空间"))
                     )
                 }
             }
-            .navigationTitle("空间建档")
+            .navigationTitle(String(localized: "空间建档"))
             .roleSwitchToolbar()
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
@@ -55,19 +55,19 @@ struct RoomListView: View {
         switch homeKit.status {
         case .restricted:
             Section {
-                Label("HomeKit 权限受限，请在系统设置中允许", systemImage: "lock.fill")
+                Label(String(localized: "HomeKit 权限受限，请在系统设置中允许"), systemImage: "lock.fill")
                     .font(.subheadline)
                     .foregroundStyle(.red)
             }
         case .waitingForHomes:
             Section {
-                Label("正在搜索 HomeKit 设备…", systemImage: "magnifyingglass")
+                Label(String(localized: "正在搜索 HomeKit 设备…"), systemImage: "magnifyingglass")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
             }
         case .failed(let msg):
             Section {
-                Label("HomeKit 异常：\(msg)", systemImage: "exclamationmark.triangle.fill")
+                Label(String(localized: "HomeKit 异常：\(msg)"), systemImage: "exclamationmark.triangle.fill")
                     .font(.subheadline)
                     .foregroundStyle(.red)
             }
@@ -87,10 +87,10 @@ struct RoomListView: View {
                 Text(room.name).font(.headline)
                 HStack(spacing: 8) {
                     if let scanned = room.lastScannedAt {
-                        Text("扫描：\(scanned.formatted(.relative(presentation: .named)))")
+                        Text(String(localized: "扫描：\(scanned.formatted(.relative(presentation: .named)))"))
                     }
                     if deviceCount > 0 {
-                        Text("\(deviceCount) 设备")
+                        Text(String(localized: "\(deviceCount) 设备"))
                     }
                 }
                 .font(.caption).foregroundStyle(.secondary)
