@@ -17,9 +17,9 @@ struct PracticeHistoryView: View {
         List {
             if sessions.isEmpty {
                 ContentUnavailableView(
-                    "暂无练习记录",
+                    String(localized: "暂无练习记录"),
                     systemImage: "clock",
-                    description: Text("患者完成练习后会在这里显示")
+                    description: Text(String(localized: "患者完成练习后会在这里显示"))
                 )
             } else {
                 ForEach(sessions, id: \.sessionID) { session in
@@ -38,7 +38,7 @@ struct PracticeHistoryView: View {
                     Image(systemName: outcomeIcon(pair.1))
                         .foregroundStyle(outcomeColor(pair.1))
                     VStack(alignment: .leading, spacing: 2) {
-                        Text(card?.question ?? "已删除的卡片")
+                        Text(card?.question ?? String(localized: "已删除的卡片"))
                             .font(.subheadline)
                         if let answer = card?.answer {
                             Text(answer)
@@ -62,18 +62,18 @@ struct PracticeHistoryView: View {
                     Text(formatDate(session.startedAt))
                         .font(.subheadline.bold())
                     HStack(spacing: 8) {
-                        Text("\(session.cardCount) 题")
+                        Text(String(localized: "\(session.cardCount) 题"))
                             .font(.caption)
                             .foregroundStyle(.secondary)
                         if session.completedAt != nil {
                             let rate = session.cardCount > 0
                                 ? Double(session.correctCount) / Double(session.cardCount)
                                 : 0
-                            Text("正确率 \(Int(rate * 100))%")
+                            Text(String(localized: "正确率 \(Int(rate * 100))%"))
                                 .font(.caption)
                                 .foregroundStyle(rate >= 0.7 ? .green : .orange)
                         } else {
-                            Text("未完成")
+                            Text(String(localized: "未完成"))
                                 .font(.caption)
                                 .foregroundStyle(.red)
                         }

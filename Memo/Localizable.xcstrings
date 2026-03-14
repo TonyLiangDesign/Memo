@@ -882,7 +882,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "E.g., wrong location"
+            "value": "e.g., Wrong location"
           }
         }
       }
@@ -1862,7 +1862,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Will appear after patient completes practice"
+            "value": "Practice records will appear here after patient completes them"
           }
         }
       }
@@ -2468,7 +2468,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reason for Correction (optional)"
+            "value": "Correction Reason (Optional)"
           }
         }
       }
@@ -3845,7 +3845,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Settings"
+            "value": "Set"
           }
         }
       }

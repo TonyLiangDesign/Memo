@@ -156,7 +156,7 @@ struct RoomScanView: View {
                 if isSaving {
                     ProgressView().tint(.white)
                 }
-                Text(isSaving ? "正在保存..." : "保存空间地图")
+                Text(isSaving ? String(localized: "正在保存...") : String(localized: "保存空间地图"))
                     .font(.headline)
             }
             .foregroundStyle(.white)

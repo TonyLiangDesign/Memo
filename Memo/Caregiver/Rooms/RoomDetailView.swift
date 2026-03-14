@@ -58,7 +58,7 @@ struct RoomDetailView: View {
     // MARK: - AR Scan
 
     private var scanSection: some View {
-        Section("空间扫描") {
+        Section(String(localized: "空间扫描")) {
             HStack {
                 VStack(alignment: .leading, spacing: 4) {
                     HStack(spacing: 6) {
@@ -79,7 +79,7 @@ struct RoomDetailView: View {
                 Button {
                     showScan = true
                 } label: {
-                    Label(room.isReady ? "重新扫描" : "扫描空间", systemImage: "viewfinder")
+                    Label(room.isReady ? String(localized: "重新扫描") : String(localized: "扫描空间"), systemImage: "viewfinder")
                 }
                 .buttonStyle(.borderedProminent)
                 .controlSize(.small)

@@ -13,27 +13,27 @@ struct MemoryEditView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section("原始内容") {
+                Section(String(localized: "原始内容")) {
                     Text(event.content)
                         .foregroundStyle(.secondary)
                 }
 
-                Section("更正内容") {
-                    TextField("更正后的内容", text: $correctedContent)
+                Section(String(localized: "更正内容")) {
+                    TextField(String(localized: "更正后的内容"), text: $correctedContent)
                 }
 
-                Section("更正原因（可选）") {
-                    TextField("例如：位置不对", text: $correctionReason)
+                Section(String(localized: "更正原因（可选）")) {
+                    TextField(String(localized: "例如：位置不对"), text: $correctionReason)
                 }
             }
-            .navigationTitle("更正记忆")
+            .navigationTitle(String(localized: "更正记忆"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("取消") { dismiss() }
+                    Button(String(localized: "取消")) { dismiss() }
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("保存更正") { save() }
+                    Button(String(localized: "保存更正")) { save() }
                         .disabled(correctedContent.isEmpty)
                 }
             }

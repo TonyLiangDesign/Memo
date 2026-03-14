@@ -43,7 +43,7 @@ struct CaregiverAuthView: View {
 
     private var pinInputSection: some View {
         VStack(spacing: 16) {
-            Text(isSettingPIN ? "设置4位PIN码" : "输入PIN码")
+            Text(isSettingPIN ? String(localized: "设置4位PIN码") : String(localized: "输入PIN码"))
                 .font(.headline)
 
             SecureField("PIN", text: $pin)
@@ -60,7 +60,7 @@ struct CaregiverAuthView: View {
                     verifyPIN()
                 }
             } label: {
-                Text(isSettingPIN ? "设置" : "确认")
+                Text(isSettingPIN ? String(localized: "设置") : String(localized: "确认"))
                     .font(.title3.bold())
                     .frame(maxWidth: .infinity, minHeight: 50)
             }
