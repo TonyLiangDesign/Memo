@@ -12,17 +12,116 @@
         }
       }
     },
-    "%@ %@": {
+    "\\(autoCards.count) 张": {
+      "extractionState": "stale",
       "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "new",
-            "value": "%1$@ %2$@"
-          }
-        },
         "en": {
           "stringUnit": {
             "state": "translated",
+            "value": "\\(autoCards.count) cards"
+          }
+        }
+      }
+    },
+    "\\(deviceCount) 设备": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "\\(deviceCount) devices"
+          }
+        }
+      }
+    },
+    "\\(prefix)处于用电状态。": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "\\(prefix) In use."
+          }
+        }
+      }
+    },
+    "\\(prefix)已关闭。": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "\\(prefix) Closed."
+          }
+        }
+      }
+    },
+    "\\(prefix)已关闭电源。": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "\\(prefix) Power off."
+          }
+        }
+      }
+    },
+    "\\(prefix)已开启电源。": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "\\(prefix) Power on."
+          }
+        }
+      }
+    },
+    "\\(prefix)已打开。": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "\\(prefix) Opened."
+          }
+        }
+      }
+    },
+    "\\(prefix)检测到活动。": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "\\(prefix) Motion detected."
+          }
+        }
+      }
+    },
+    "\\(prefix)结束用电状态。": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "\\(prefix) Not in use."
+          }
+        }
+      }
+    },
+    "%@ %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ %2$@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "new",
             "value": "%1$@ %2$@"
           }
         }
@@ -48,6 +147,13 @@
         }
       }
     },
+    "%@处于用电状态。": {},
+    "%@已关闭。": {},
+    "%@已关闭电源。": {},
+    "%@已开启电源。": {},
+    "%@已打开。": {},
+    "%@检测到活动。": {},
+    "%@结束用电状态。": {},
     "%lld 个传感器": {
       "localizations": {
         "en": {
@@ -120,15 +226,15 @@
     },
     "%lld/%lld": {
       "localizations": {
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "new",
-            "value": "%1$lld/%2$lld"
-          }
-        },
         "en": {
           "stringUnit": {
             "state": "translated",
+            "value": "%1$lld/%2$lld"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "new",
             "value": "%1$lld/%2$lld"
           }
         }
@@ -317,6 +423,17 @@
         }
       }
     },
+    "HomeKit 异常：\\(msg)": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "HomeKit error: \\(msg)"
+          }
+        }
+      }
+    },
     "HomeKit 异常：%@": {
       "localizations": {
         "en": {
@@ -347,12 +464,43 @@
         }
       }
     },
+    "HomeKit 被动事件：\\(accessory.name)（\\(location)）": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "HomeKit Event: \\(accessory.name) (\\(location))"
+          }
+        }
+      }
+    },
+    "HomeKit 被动事件：%@（%@）": {
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "new",
+            "value": "HomeKit 被动事件：%1$@（%2$@）"
+          }
+        }
+      }
+    },
     "HomeKit 设备": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "HomeKit Devices"
+          }
+        }
+      }
+    },
+    "Memo 家居被动事件": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memo Home Passive Events"
           }
         }
       }
@@ -572,6 +720,17 @@
         }
       }
     },
+    "什么时候": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "when"
+          }
+        }
+      }
+    },
     "今天": {
       "extractionState": "stale",
       "localizations": {
@@ -579,6 +738,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Today"
+          }
+        }
+      }
+    },
+    "今天 \\(times.joined(separator: \"、\")) 共 \\(times.count) 次询问": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Asked \\(times.count) times today at \\(times.joined(separator: \", \"))"
           }
         }
       }
@@ -620,6 +790,39 @@
           "stringUnit": {
             "state": "translated",
             "value": "Who is he/she"
+          }
+        }
+      }
+    },
+    "你的\\(relation)": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your \\(relation)"
+          }
+        }
+      }
+    },
+    "你的\\(relation)（\\(realName)）": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your \\(relation) (\\(realName))"
+          }
+        }
+      }
+    },
+    "你的%@": {},
+    "你的%@（%@）": {
+      "localizations": {
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "new",
+            "value": "你的%1$@（%2$@）"
           }
         }
       }
@@ -1038,6 +1241,16 @@
         }
       }
     },
+    "功率(W)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Power (W)"
+          }
+        }
+      }
+    },
     "加载地图失败：%@": {
       "localizations": {
         "en": {
@@ -1217,6 +1430,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Detected negative emotions in %lld interactions"
+          }
+        }
+      }
+    },
+    "在哪": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "where"
           }
         }
       }
@@ -1491,12 +1715,33 @@
         }
       }
     },
+    "建议：\\n1. 在显眼位置放置提示卡片\\n2. 考虑将此信息加入每日回顾\\n3. 如持续重复，建议就医评估": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suggestions:\\n1. Place reminder cards in visible locations\\n2. Consider adding this info to daily review\\n3. If persistent, recommend medical evaluation"
+          }
+        }
+      }
+    },
     "建议措施": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Suggested Actions"
+          }
+        }
+      }
+    },
+    "建议生成功能暂时不可用": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recommendation generation temporarily unavailable"
           }
         }
       }
@@ -1601,6 +1846,17 @@
         }
       }
     },
+    "患者今天重复询问「\\(extractTopic(content))」": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Patient repeatedly asked \"\\(extractTopic(content))\" today"
+          }
+        }
+      }
+    },
     "患者完成练习后会在这里显示": {
       "localizations": {
         "en": {
@@ -1687,6 +1943,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Extending"
+          }
+        }
+      }
+    },
+    "扫描：\\(scanned.formatted(.relative(presentation: .named)))": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scanned: \\(scanned.formatted(.relative(presentation: .named)))"
           }
         }
       }
@@ -2226,6 +2493,28 @@
         }
       }
     },
+    "服用": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "take"
+          }
+        }
+      }
+    },
+    "服用 \\(plan.medicationName)": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "take \\(plan.medicationName)"
+          }
+        }
+      }
+    },
     "服用 %@": {
       "localizations": {
         "en": {
@@ -2252,6 +2541,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Unassigned"
+          }
+        }
+      }
+    },
+    "未分配房间": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unassigned Room"
           }
         }
       }
@@ -2347,6 +2646,7 @@
       }
     },
     "未配置 EverMemOS API": {
+      "extractionState": "stale",
       "localizations": {
         "en": {
           "stringUnit": {
@@ -2643,6 +2943,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Relocalizing"
+          }
+        }
+      }
+    },
+    "正确率 \\(Int(rate * 100))%": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "\\(Int(rate * 100))% correct"
           }
         }
       }
@@ -2968,6 +3279,7 @@
       }
     },
     "生成建议失败：%@": {
+      "extractionState": "stale",
       "localizations": {
         "en": {
           "stringUnit": {
@@ -3003,6 +3315,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "For camera auto-detection of medication behavior"
+          }
+        }
+      }
+    },
+    "电压(V)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voltage (V)"
+          }
+        }
+      }
+    },
+    "电流(A)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Current (A)"
           }
         }
       }
@@ -3103,6 +3435,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Confirm Reset"
+          }
+        }
+      }
+    },
+    "视在功率(VA)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apparent Power (VA)"
           }
         }
       }
@@ -3234,6 +3576,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Manage Faces"
+          }
+        }
+      }
+    },
+    "累计(kWh)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total (kWh)"
           }
         }
       }
@@ -3949,302 +4301,612 @@
         }
       }
     },
-    "你的\\(relation)": {
+    "AI 连接失败: \\(error.localizedDescription)": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Your \\(relation)"
+            "value": "AI connection failed: \\(error.localizedDescription)"
           }
         }
       }
     },
-    "你的\\(relation)（\\(realName)）": {
+    "DeepSeek API 错误 (\\(code)): \\(msg.prefix(200))": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Your \\(relation) (\\(realName))"
+            "value": "DeepSeek API error (\\(code)): \\(msg.prefix(200))"
           }
         }
       }
     },
-    "功率(W)": {
+    "FirmwareRevision 固件版本": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Power (W)"
+            "value": "FirmwareRevision Firmware Version"
           }
         }
       }
     },
-    "电流(A)": {
+    "HomeKit 传感器": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Current (A)"
+            "value": "HomeKit Sensor"
           }
         }
       }
     },
-    "累计(kWh)": {
+    "HomeKit 插座": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Total (kWh)"
+            "value": "HomeKit Outlet"
           }
         }
       }
     },
-    "视在功率(VA)": {
+    "Manufacturer 厂商": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Apparent Power (VA)"
+            "value": "Manufacturer"
           }
         }
       }
     },
-    "电压(V)": {
+    "Model 型号": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Voltage (V)"
+            "value": "Model"
           }
         }
       }
     },
-    "Memo 家居被动事件": {
+    "M月d日 HH:mm": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Memo Home Passive Events"
+            "value": "MMM d HH:mm"
           }
         }
       }
     },
-    "在哪": {
+    "Name 名称": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "where"
+            "value": "Name"
           }
         }
       }
     },
-    "什么时候": {
+    "OutletInUse 正在用电": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "when"
+            "value": "OutletInUse In Use"
           }
         }
       }
     },
-    "服用": {
+    "PowerState 电源开关": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "take"
+            "value": "PowerState Power"
           }
         }
       }
     },
-    "服用 \\(plan.medicationName)": {
+    "SerialNumber 序列号": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "take \\(plan.medicationName)"
+            "value": "SerialNumber Serial Number"
           }
         }
       }
     },
-    "今天 \\(times.joined(separator: \"、\")) 共 \\(times.count) 次询问": {
+    "\\(accessory.name)（\\(roomName)）开始用电": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Asked \\(times.count) times today at \\(times.joined(separator: \", \"))"
+            "value": "\\(accessory.name) (\\(roomName)) started using power"
           }
         }
       }
     },
-    "患者今天重复询问「\\(extractTopic(content))」": {
+    "\\(f.name)\\(rel)，置信度\\(Int(f.confidence * 100))%": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Patient repeatedly asked \"\\(extractTopic(content))\" today"
+            "value": "\\(f.name)\\(rel), \\(Int(f.confidence * 100))% confidence"
           }
         }
       }
     },
-    "建议：\\n1. 在显眼位置放置提示卡片\\n2. 考虑将此信息加入每日回顾\\n3. 如持续重复，建议就医评估": {
+    "\\(featurePointCount) 特征点": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Suggestions:\\n1. Place reminder cards in visible locations\\n2. Consider adding this info to daily review\\n3. If persistent, recommend medical evaluation"
+            "value": "\\(featurePointCount) feature points"
           }
         }
       }
     },
-    "未分配房间": {
+    "\\(session.cardCount) 题": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Unassigned Room"
+            "value": "\\(session.cardCount) questions"
           }
         }
       }
     },
-    "HomeKit 被动事件：\\(accessory.name)（\\(location)）": {
+    "yyyy年M月d日 HH:mm": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "HomeKit Event: \\(accessory.name) (\\(location))"
+            "value": "MMM d, yyyy HH:mm"
           }
         }
       }
     },
-    "\\(prefix)检测到活动。": {
+    "一个对应emoji": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "\\(prefix) Motion detected."
+            "value": "a corresponding emoji"
           }
         }
       }
     },
-    "\\(prefix)已打开。": {
+    "书": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "\\(prefix) Opened."
+            "value": "Study"
           }
         }
       }
     },
-    "\\(prefix)已关闭。": {
+    "今天上午10点记录的": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "\\(prefix) Closed."
+            "value": "recorded at 10am today"
           }
         }
       }
     },
-    "\\(prefix)已开启电源。": {
+    "你": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "\\(prefix) Power on."
+            "value": "You"
           }
         }
       }
     },
-    "\\(prefix)已关闭电源。": {
+    "你\\(trimmed)": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "\\(prefix) Power off."
+            "value": "Your \\(trimmed)"
           }
         }
       }
     },
-    "\\(prefix)处于用电状态。": {
+    "卧": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "\\(prefix) In use."
+            "value": "Bed"
           }
         }
       }
     },
-    "\\(prefix)结束用电状态。": {
+    "厨": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "\\(prefix) Not in use."
+            "value": "Kitchen"
           }
         }
       }
     },
-    "\\(autoCards.count) 张": {
+    "客": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "\\(autoCards.count) cards"
+            "value": "Living"
           }
         }
       }
     },
-    "正确率 \\(Int(rate * 100))%": {
+    "已保存「\\(name)」": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "\\(Int(rate * 100))% correct"
+            "value": "Saved \"\\(name)\""
           }
         }
       }
     },
-    "建议生成功能暂时不可用": {
+    "已采集：\\(viewModel.capturedCount)/\\(viewModel.minSamples)": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Recommendation generation temporarily unavailable"
+            "value": "Captured: \\(viewModel.capturedCount)/\\(viewModel.minSamples)"
           }
         }
       }
     },
-    "HomeKit 异常：\\(msg)": {
+    "当前看到：": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "HomeKit error: \\(msg)"
+            "value": "Currently visible:"
           }
         }
       }
     },
-    "扫描：\\(scanned.formatted(.relative(presentation: .named)))": {
+    "当前视线中没有检测到认识的人。": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Scanned: \\(scanned.formatted(.relative(presentation: .named)))"
+            "value": "No recognized person detected in current view."
           }
         }
       }
     },
-    "\\(deviceCount) 设备": {
+    "您的": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "\\(deviceCount) devices"
+            "value": "Your"
+          }
+        }
+      }
+    },
+    "房间": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Room"
+          }
+        }
+      }
+    },
+    "扫描": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan"
+          }
+        }
+      }
+    },
+    "扫描完成": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan Complete"
+          }
+        }
+      }
+    },
+    "扫描房间": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan Room"
+          }
+        }
+      }
+    },
+    "找到": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Found"
+          }
+        }
+      }
+    },
+    "拍照": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Take Photo"
+          }
+        }
+      }
+    },
+    "无法识别": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cannot Recognize"
+          }
+        }
+      }
+    },
+    "未找到": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not Found"
+          }
+        }
+      }
+    },
+    "未找到相关记录": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No related records found"
+          }
+        }
+      }
+    },
+    "正在": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In Progress"
+          }
+        }
+      }
+    },
+    "正在加载": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading"
+          }
+        }
+      }
+    },
+    "正在搜索": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Searching"
+          }
+        }
+      }
+    },
+    "正确": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Correct"
+          }
+        }
+      }
+    },
+    "浴": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bath"
+          }
+        }
+      }
+    },
+    "物品中文名": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "item name"
+          }
+        }
+      }
+    },
+    "物品名称": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Item Name"
+          }
+        }
+      }
+    },
+    "简短场景描述": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "brief scene description"
+          }
+        }
+      }
+    },
+    "练习": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Practice"
+          }
+        }
+      }
+    },
+    "练习历史": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Practice History"
+          }
+        }
+      }
+    },
+    "继续": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continue"
+          }
+        }
+      }
+    },
+    "识别中": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recognizing"
+          }
+        }
+      }
+    },
+    "请先配置 API": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Please configure API first"
+          }
+        }
+      }
+    },
+    "请输入": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Please enter"
+          }
+        }
+      }
+    },
+    "请输入物品名称": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Please enter item name"
+          }
+        }
+      }
+    },
+    "请输入答案": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Please enter answer"
+          }
+        }
+      }
+    },
+    "请输入问题": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Please enter question"
+          }
+        }
+      }
+    },
+    "请选择": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Please select"
+          }
+        }
+      }
+    },
+    "开始": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start"
+          }
+        }
+      }
+    },
+    "开始练习": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start Practice"
+          }
+        }
+      }
+    },
+    "重试": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retry"
+          }
+        }
+      }
+    },
+    "长按录音": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hold to Record"
           }
         }
       }

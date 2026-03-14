@@ -145,16 +145,16 @@ struct LiveModeView: View {
             // 答题
             Button { showPractice = true } label: {
                 if dailyMemoryService.hasPendingPractice {
-                    Label("每日答题 ●", systemImage: "brain.head.profile")
+                    Label(String(localized: "每日答题 ●"), systemImage: "brain.head.profile")
                 } else {
-                    Label("每日答题", systemImage: "brain.head.profile")
+                    Label(String(localized: "每日答题"), systemImage: "brain.head.profile")
                 }
             }
 
             // 回到对话（idle）
             if feature != .idle {
                 Button { switchFeature(to: .idle) } label: {
-                    Label("返回对话", systemImage: "mic.fill")
+                    Label(String(localized: "返回对话"), systemImage: "mic.fill")
                 }
             }
 
@@ -170,7 +170,7 @@ struct LiveModeView: View {
 
             // 切换看护者
             Button { withAnimation { roleManager.toggleRole() } } label: {
-                Label("切换看护者", systemImage: "arrow.left.arrow.right")
+                Label(String(localized: "切换看护者"), systemImage: "arrow.left.arrow.right")
             }
         } label: {
             ZStack(alignment: .topTrailing) {
@@ -193,7 +193,7 @@ struct LiveModeView: View {
         let grouped = Dictionary(grouping: saved) { $0.roomID }
         return Menu {
             if saved.isEmpty {
-                Text("暂无已保存的物品")
+                Text(String(localized: "暂无已保存的物品"))
             } else {
                 ForEach(readyRooms, id: \.roomID) { room in
                     let roomItems = grouped[room.roomID] ?? []

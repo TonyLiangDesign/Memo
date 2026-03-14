@@ -43,7 +43,7 @@ struct ChatOverlay: View {
             Button("取消", role: .cancel) {
                 cancelDial()
             }
-            Button("拨打") {
+            Button(String(localized: "拨打")) {
                 dialPendingContact()
             }
         } message: {

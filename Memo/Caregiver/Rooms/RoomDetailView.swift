@@ -70,7 +70,7 @@ struct RoomDetailView: View {
                         }
                     }
                     if room.featurePointCount > 0 {
-                        Text("\(room.featurePointCount) 特征点 · \(ByteCountFormatter.string(fromByteCount: Int64(room.lastMapSizeBytes), countStyle: .file))")
+                        Text(String(localized: "\(room.featurePointCount) 特征点 · \(ByteCountFormatter.string(fromByteCount: Int64(room.lastMapSizeBytes), countStyle: .file))"))
                             .font(.caption2)
                             .foregroundStyle(.tertiary)
                     }
@@ -92,9 +92,9 @@ struct RoomDetailView: View {
     private var devicesSection: some View {
         let devices = homeKit.discoveredAccessories.filter { room.homeKitRoomNames.contains($0.roomName) }
 
-        return Section(header: Text("HomeKit 设备"), footer: devicesFooter(count: devices.count)) {
+        return Section(header: Text(String(localized: "HomeKit 设备")), footer: devicesFooter(count: devices.count)) {
             if devices.isEmpty {
-                Text("暂无关联设备")
+                Text(String(localized: "暂无关联设备"))
                     .foregroundStyle(.secondary)
                     .font(.subheadline)
             } else {
@@ -108,9 +108,9 @@ struct RoomDetailView: View {
     private func devicesFooter(count: Int) -> some View {
         Group {
             if room.homeKitRoomNames.isEmpty {
-                Text("请在下方「HomeKit 房间绑定」中关联 HomeKit 房间以显示设备。")
+                Text(String(localized: "请在下方「HomeKit 房间绑定」中关联 HomeKit 房间以显示设备。"))
             } else if count == 0 {
-                Text("已关联的 HomeKit 房间中未发现传感器设备。")
+                Text(String(localized: "已关联的 HomeKit 房间中未发现传感器设备。"))
             } else {
                 EmptyView()
             }
@@ -133,7 +133,7 @@ struct RoomDetailView: View {
                 HStack(spacing: 8) {
                     Text(sensorTypeLabel(accessory.sensorTypes))
                     if !accessory.isReachable {
-                        Text("离线").foregroundStyle(.red)
+                        Text(String(localized: "离线")).foregroundStyle(.red)
                     }
                 }
                 .font(.caption)
@@ -147,9 +147,9 @@ struct RoomDetailView: View {
     private var bindingSection: some View {
         let allHomeKitRooms = Set(homeKit.discoveredAccessories.map(\.roomName)).sorted()
 
-        return Section(header: Text("HomeKit 房间绑定"), footer: Text("选择哪些 HomeKit 房间的设备属于此房间。")) {
+        return Section(header: Text(String(localized: "HomeKit 房间绑定")), footer: Text(String(localized: "选择哪些 HomeKit 房间的设备属于此房间。"))) {
             if allHomeKitRooms.isEmpty {
-                Text("未发现 HomeKit 房间")
+                Text(String(localized: "未发现 HomeKit 房间"))
                     .foregroundStyle(.secondary)
                     .font(.subheadline)
             } else {
@@ -172,7 +172,7 @@ struct RoomDetailView: View {
                         HStack {
                             Text(hkRoom)
                             Spacer()
-                            Text("\(deviceCount) 设备")
+                            Text(String(localized: "\(deviceCount) 设备"))
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                         }

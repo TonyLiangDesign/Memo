@@ -61,7 +61,7 @@ struct DailyPracticeView: View {
                     .background(.white.opacity(0.15), in: Circle())
             }
             Spacer()
-            Text("想一想")
+            Text(String(localized: "想一想"))
                 .font(.title2.bold())
                 .foregroundStyle(.white)
             Spacer()
@@ -134,7 +134,7 @@ struct DailyPracticeView: View {
     // MARK: - Tap Hint
 
     private var tapHint: some View {
-        Text("点击卡片查看答案")
+        Text(String(localized: "点击卡片查看答案"))
             .font(.callout)
             .foregroundStyle(.white.opacity(0.5))
             .padding(.bottom, 20)
@@ -147,7 +147,7 @@ struct DailyPracticeView: View {
             Button { record(.incorrect) } label: {
                 HStack(spacing: 8) {
                     Image(systemName: "xmark")
-                    Text("忘了")
+                    Text(String(localized: "忘了"))
                 }
                 .font(.title3.bold())
                 .foregroundStyle(.white)
@@ -159,7 +159,7 @@ struct DailyPracticeView: View {
             Button { record(.correct) } label: {
                 HStack(spacing: 8) {
                     Image(systemName: "checkmark")
-                    Text("记得")
+                    Text(String(localized: "记得"))
                 }
                 .font(.title3.bold())
                 .foregroundStyle(.white)
@@ -180,12 +180,12 @@ struct DailyPracticeView: View {
                 .font(.system(size: 72))
                 .foregroundStyle(.yellow)
 
-            Text("练习完成！")
+            Text(String(localized: "练习完成！"))
                 .font(.largeTitle.bold())
                 .foregroundStyle(.white)
 
             if let session {
-                Text("答对 \(session.correctCount) / \(session.cardCount) 题")
+                Text(String(localized: "答对 \(session.correctCount) / \(session.cardCount) 题"))
                     .font(.title2)
                     .foregroundStyle(.white.opacity(0.8))
 
@@ -195,7 +195,7 @@ struct DailyPracticeView: View {
             Spacer()
 
             Button { dismiss() } label: {
-                Text("完成")
+                Text(String(localized: "完成"))
                     .font(.title3.bold())
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity)
@@ -230,14 +230,14 @@ struct DailyPracticeView: View {
             Image(systemName: "brain.head.profile")
                 .font(.system(size: 56))
                 .foregroundStyle(.white.opacity(0.5))
-            Text("暂无练习卡片")
+            Text(String(localized: "暂无练习卡片"))
                 .font(.title2)
                 .foregroundStyle(.white.opacity(0.7))
-            Text("请让照护者添加联系人、物品或用药计划")
+            Text(String(localized: "请让照护者添加联系人、物品或用药计划"))
                 .font(.callout)
                 .foregroundStyle(.white.opacity(0.5))
             Button { dismiss() } label: {
-                Text("返回")
+                Text(String(localized: "返回"))
                     .font(.title3.bold())
                     .foregroundStyle(.white)
                     .padding(.horizontal, 40)

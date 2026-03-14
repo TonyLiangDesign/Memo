@@ -36,7 +36,7 @@ struct FaceCaptureView: View {
             VStack {
                 // Top bar
                 HStack {
-                    Button("取消") { dismiss() }
+                    Button(String(localized: "取消")) { dismiss() }
                         .foregroundStyle(.white)
                         .padding(12)
                         .background(.black.opacity(0.5), in: Capsule())
@@ -68,7 +68,7 @@ struct FaceCaptureView: View {
 
                 // Progress dots
                 HStack(spacing: 6) {
-                    Text("已采集：\(viewModel.capturedCount)/\(viewModel.minSamples)")
+                    Text(String(localized: "已采集：\(viewModel.capturedCount)/\(viewModel.minSamples)"))
                         .font(.subheadline.bold())
                         .foregroundStyle(.white)
                     ForEach(0..<viewModel.minSamples, id: \.self) { i in
@@ -97,7 +97,7 @@ struct FaceCaptureView: View {
 
                     // Done button (visible when min samples reached)
                     if viewModel.isComplete {
-                        Button("完成") {
+                        Button(String(localized: "完成")) {
                             dismiss()
                         }
                         .font(.headline)
