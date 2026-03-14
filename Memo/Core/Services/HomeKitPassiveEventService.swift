@@ -810,12 +810,15 @@ final class HomeKitPassiveEventService: NSObject {
                     content = "患者离开\(roomName)"
                 }
 
+                let deviceID = DeviceIDManager.shared.deviceID
+                let augmentedSender = DeviceIDHelper.augment(userId: "homekit_sensor", with: deviceID)
+                let augmentedGroupID = DeviceIDHelper.augment(groupId: "homekit_motion_sensors", with: deviceID)
                 let request = MemorizeRequest(
                     messageId: sensorEvent.eventID,
                     createTime: ISO8601DateFormatter().string(from: timestamp),
-                    sender: "homekit_sensor",
+                    sender: augmentedSender,
                     content: content,
-                    groupId: "homekit_motion_sensors",
+                    groupId: augmentedGroupID,
                     groupName: "房间活动记录",
                     senderName: "HomeKit 传感器",
                     role: "assistant",
@@ -870,12 +873,15 @@ final class HomeKitPassiveEventService: NSObject {
 
                 let content = powerOn ? "患者打开了\(roomName)的\(accessory.name)" : "患者关闭了\(roomName)的\(accessory.name)"
 
+                let deviceID = DeviceIDManager.shared.deviceID
+                let augmentedSender = DeviceIDHelper.augment(userId: "homekit_outlet", with: deviceID)
+                let augmentedGroupID = DeviceIDHelper.augment(groupId: "homekit_outlet_sensors", with: deviceID)
                 let request = MemorizeRequest(
                     messageId: sensorEvent.eventID,
                     createTime: ISO8601DateFormatter().string(from: timestamp),
-                    sender: "homekit_outlet",
+                    sender: augmentedSender,
                     content: content,
-                    groupId: "homekit_outlet_sensors",
+                    groupId: augmentedGroupID,
                     groupName: "电器使用记录",
                     senderName: "HomeKit 插座",
                     role: "assistant",

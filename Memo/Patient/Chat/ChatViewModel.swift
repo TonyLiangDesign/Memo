@@ -754,13 +754,16 @@ final class ChatViewModel {
         guard !trimmed.isEmpty else { return }
 
         logger.info("[Memorize] Sending: \(trimmed.prefix(50))... flush=\(flush)")
+        let deviceID = DeviceIDManager.shared.deviceID
         Task.detached { [userID, groupID] in
+            let augmentedUserID = DeviceIDHelper.augment(userId: userID, with: deviceID)
+            let augmentedGroupID = DeviceIDHelper.augment(groupId: groupID, with: deviceID)
             let req = MemorizeRequest(
                 messageId: UUID().uuidString,
                 createTime: ISO8601DateFormatter().string(from: Date()),
-                sender: userID,
+                sender: augmentedUserID,
                 content: trimmed,
-                groupId: groupID,
+                groupId: augmentedGroupID,
                 groupName: "Memo 患者记忆",
                 senderName: userID == "patient" ? "患者" : "照护者",
                 role: userID == "patient" ? "user" : "assistant",

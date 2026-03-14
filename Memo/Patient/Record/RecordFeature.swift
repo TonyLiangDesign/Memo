@@ -84,13 +84,16 @@ final class RecordFeature {
         let locationPart = roomName.map { "，放置在\($0)" } ?? ""
         let content = "患者记录了一个物品：\(result.emoji) \(result.item)\(locationPart)。场景描述：\(result.description)"
         logger.info("[Memorize] Recording item: \(result.emoji) \(result.item), room: \(roomName ?? "nil")")
+        let deviceID = DeviceIDManager.shared.deviceID
         Task.detached {
+            let augmentedSender = DeviceIDHelper.augment(userId: "patient", with: deviceID)
+            let augmentedGroupID = DeviceIDHelper.augment(groupId: "memo_patient_default_group", with: deviceID)
             let req = MemorizeRequest(
                 messageId: UUID().uuidString,
                 createTime: ISO8601DateFormatter().string(from: Date()),
-                sender: "patient",
+                sender: augmentedSender,
                 content: content,
-                groupId: "memo_patient_default_group",
+                groupId: augmentedGroupID,
                 groupName: String(localized: "Memo 患者记忆"),
                 senderName: String(localized: "患者"),
                 role: "user",
