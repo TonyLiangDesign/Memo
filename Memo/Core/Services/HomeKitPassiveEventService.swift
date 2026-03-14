@@ -177,6 +177,11 @@ final class HomeKitPassiveEventService: NSObject {
         probeHomes(reason: "start")
     }
 
+    func updateClient(_ client: EverMemOSClient?) {
+        everMemOSClient = client
+        logger.info("🔄 EverMemOSClient 已更新: \(client != nil ? "已配置" : "未配置")")
+    }
+
     private func refreshStatusFromAuthorization() {
         if #available(iOS 13.0, *) {
             let auth = homeManager.authorizationStatus

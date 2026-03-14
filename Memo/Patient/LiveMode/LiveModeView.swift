@@ -79,6 +79,9 @@ struct LiveModeView: View {
         .task {
             homeKitService.start(context: modelContext, client: apiKeyStore.buildAPIClient())
         }
+        .onChange(of: apiKeyStore.deploymentMode) {
+            homeKitService.updateClient(apiKeyStore.buildAPIClient())
+        }
         .onAppear { startLiveMode() }
         .onDisappear { stopAll() }
         .onChange(of: recordFeature.phase) {
