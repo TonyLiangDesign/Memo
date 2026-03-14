@@ -16,6 +16,7 @@ struct LiveModeView: View {
     @Environment(APIKeyStore.self) private var apiKeyStore
     @Environment(SpeechSynthesisService.self) private var tts
     @Environment(DailyMemoryService.self) private var dailyMemoryService
+    @Environment(HomeKitPassiveEventService.self) private var homeKitService
 
     @Query(filter: #Predicate<RoomProfile> { $0.status != "draft" })
     private var readyRooms: [RoomProfile]
@@ -512,6 +513,9 @@ struct LiveModeView: View {
             orchestrator.attach(to: multiplexer)
             orchestrator.start()
             startFaceRecognition()
+
+            // Start HomeKit monitoring
+            homeKitService.start(modelContext: modelContext, apiClient: apiKeyStore.buildAPIClient())
 
             guard !readyRooms.isEmpty else {
                 logger.info("[Lifecycle] No ready rooms, skipping room detection")
