@@ -14,7 +14,7 @@ The app has two distinct interfaces: a simplified **Patient Mode** for daily use
   <img src="assets/AppIcon256.png" width="128" alt="MemoCare Icon">
 </p>
 
-The app is available for beta testing via TestFlight.
+You can download the beta app through TestFlight.
 
 <p align="center">
   <a href="https://testflight.apple.com/join/pjsZeSgw">
@@ -23,7 +23,7 @@ The app is available for beta testing via TestFlight.
 </p>
 
 > **Requirements:** iPhone running iOS 26 or later.
-> Tap the link above to install. API keys are auto-configured on first launch (available through end of April 2026).
+> Tap the link above to install.
 
 ### Recommended: Download Enhanced Voices
 
