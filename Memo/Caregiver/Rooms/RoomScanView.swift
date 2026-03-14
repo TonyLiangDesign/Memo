@@ -82,7 +82,7 @@ struct RoomScanView: View {
                 .multilineTextAlignment(.center)
 
             HStack(spacing: 16) {
-                Label("\(featurePointCount) 特征点", systemImage: "dot.radiowaves.left.and.right")
+                Label(String(localized: "\(featurePointCount) 特征点"), systemImage: "dot.radiowaves.left.and.right")
                 if let mgr = findManager {
                     Label(mappingLabel(mgr.mappingStatus), systemImage: "map")
                 }
@@ -174,7 +174,7 @@ struct RoomScanView: View {
         VStack(spacing: 16) {
             Image(systemName: "pause.circle.fill")
                 .font(.system(size: 60)).foregroundStyle(.white)
-            Text("扫描暂停，请返回继续")
+            Text(String(localized: "扫描暂停，请返回继续"))
                 .font(.title3.bold()).foregroundStyle(.white)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

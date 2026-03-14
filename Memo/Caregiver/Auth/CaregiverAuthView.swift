@@ -16,10 +16,10 @@ struct CaregiverAuthView: View {
                 .font(.system(size: 72))
                 .foregroundStyle(.pink)
 
-            Text("照护者模式")
+            Text(String(localized: "照护者模式"))
                 .font(.largeTitle.bold())
 
-            Text("需要验证身份")
+            Text(String(localized: "需要验证身份"))
                 .font(.title3)
                 .foregroundStyle(.secondary)
 
@@ -76,7 +76,7 @@ struct CaregiverAuthView: View {
             Button {
                 Task { await tryBiometrics() }
             } label: {
-                Label("使用Face ID", systemImage: "faceid")
+                Label(String(localized: "使用Face ID"), systemImage: "faceid")
                     .font(.title3.bold())
                     .frame(maxWidth: .infinity, minHeight: 50)
             }
@@ -84,7 +84,7 @@ struct CaregiverAuthView: View {
             .tint(.pink)
             .padding(.horizontal, 40)
 
-            Button("使用PIN码") {
+            Button(String(localized: "使用PIN码")) {
                 if authService.hasPIN {
                     showPINInput = true
                 } else {
