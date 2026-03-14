@@ -3,6 +3,8 @@ import Foundation
 /// Manages unique device identifier for multi-user support
 @Observable
 final class DeviceIDManager {
+    static let shared = DeviceIDManager()
+
     private static let deviceIDKey = "com.memo.deviceID"
 
     /// Unique device identifier (persisted in UserDefaults)
