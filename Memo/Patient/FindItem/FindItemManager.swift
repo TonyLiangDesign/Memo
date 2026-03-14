@@ -410,13 +410,20 @@ final class FindItemManager: NSObject, FrameConsumer {
     var isDetectingRoom = false
 
     /// Try each room's world map in order; the first to relocalize wins.
-    /// Sorted by most recently updated so the likeliest room is tried first.
+    /// Sorted by: 1) last successful detection, 2) most recently updated.
     func detectCurrentRoom(rooms: [RoomProfile], on arView: ARView) async {
-        let sorted = rooms.sorted { $0.updatedAt > $1.updatedAt }
+        let enabledRooms = rooms.filter { $0.isEnabled }
+        let sorted = enabledRooms.sorted { lhs, rhs in
+            // Prioritize last successful room
+            if lhs.relocSuccessCount > 0 && rhs.relocSuccessCount == 0 { return true }
+            if rhs.relocSuccessCount > 0 && lhs.relocSuccessCount == 0 { return false }
+            // Then by most recently updated
+            return lhs.updatedAt > rhs.updatedAt
+        }
         isDetectingRoom = true
         detectedRoomID = nil
         statusMessage = String(localized: "正在识别房间...")
-        logger.info("[RoomDetect] Starting detection with \(sorted.count) rooms")
+        logger.info("[RoomDetect] Starting detection with \(sorted.count) enabled rooms (total: \(rooms.count))")
 
         for room in sorted {
             guard !Task.isCancelled else { break }
@@ -455,7 +462,8 @@ final class FindItemManager: NSObject, FrameConsumer {
                 guard !Task.isCancelled else { break }
                 try? await Task.sleep(for: .milliseconds(500))
                 if case .relocating = trackingState { sawRelocalizing = true }
-                if case .limited(let r) = trackingState, r.contains("重新定位") { sawRelocalizing = true }
+                let trackingStr = String(describing: trackingState).lowercased()
+                if trackingStr.contains("relocaliz") { sawRelocalizing = true }
                 let isNormal = trackingState == .normal
                 logger.info("[RoomDetect]   tick \(tick): tracking=\(String(describing: self.trackingState)), sawRelocalizing=\(sawRelocalizing), isNormal=\(isNormal)")
                 if isNormal && sawRelocalizing {

@@ -83,7 +83,6 @@ struct SettingsView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(RoleManager.self) private var roleManager
     @Environment(APIKeyStore.self) private var apiKeyStore
-    @Environment(PatientModeManager.self) private var patientModeManager
     @State private var showResetConfirm = false
     @State private var resetDone = false
     @State private var everMemOSBaseURL = ""
@@ -108,15 +107,6 @@ struct SettingsView: View {
                     Button(String(localized: "切换角色")) {
                         roleManager.toggleRole()
                     }
-                }
-
-                Section(header: Text(String(localized: "患者界面模式")), footer: Text(String(localized: "融合模式：AR 画面常驻，底部切换功能。分离模式：三个功能独立入口，更简洁。"))) {
-                    @Bindable var mm = patientModeManager
-                    Picker(String(localized: "模式"), selection: $mm.mode) {
-                        Text(String(localized: "融合模式")).tag(PatientModeManager.Mode.combined)
-                        Text(String(localized: "分离模式")).tag(PatientModeManager.Mode.split)
-                    }
-                    .pickerStyle(.segmented)
                 }
 
                 everMemOSSection

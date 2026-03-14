@@ -7,6 +7,7 @@ final class RoomProfile: Identifiable {
     var name: String
     var emoji: String
     var status: String  // RoomStatus rawValue — kept as String for #Predicate compatibility
+    var isEnabled: Bool = true  // Whether this room participates in auto-detection
     var lastScannedAt: Date?
     var featurePointCount: Int
     var lastMapSizeBytes: Int

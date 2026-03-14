@@ -16,6 +16,7 @@ struct RoomDetailView: View {
         List {
             roomInfoSection
             scanSection
+            itemsSection
             devicesSection
             bindingSection
         }
@@ -52,6 +53,10 @@ struct RoomDetailView: View {
                         .font(.system(size: 36))
                 }
             }
+            Toggle(String(localized: "参与自动识别"), isOn: Binding(
+                get: { room.isEnabled },
+                set: { room.isEnabled = $0; try? modelContext.save() }
+            ))
         }
     }
 
@@ -83,6 +88,18 @@ struct RoomDetailView: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .controlSize(.small)
+            }
+        }
+    }
+
+    // MARK: - Items
+
+    private var itemsSection: some View {
+        Section(String(localized: "已保存物品")) {
+            Button(role: .destructive) {
+                clearAllItems()
+            } label: {
+                Label(String(localized: "清除所有物品"), systemImage: "trash")
             }
         }
     }
@@ -200,5 +217,18 @@ struct RoomDetailView: View {
             default: return type
             }
         }.joined(separator: " · ")
+    }
+
+    private func clearAllItems() {
+        let roomID = room.roomID
+        let descriptor = FetchDescriptor<SpatialAnchor>(predicate: #Predicate { anchor in
+            anchor.roomID == roomID
+        })
+        if let anchors = try? modelContext.fetch(descriptor) {
+            for anchor in anchors {
+                modelContext.delete(anchor)
+            }
+            try? modelContext.save()
+        }
     }
 }

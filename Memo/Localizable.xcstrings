@@ -1298,6 +1298,7 @@
       }
     },
     "分离模式" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1608,6 +1609,9 @@
         }
       }
     },
+    "参与自动识别" : {
+
+    },
     "取消" : {
       "localizations" : {
         "en" : {
@@ -1872,6 +1876,12 @@
           }
         }
       }
+    },
+    "已保存到 %@" : {
+
+    },
+    "已保存物品" : {
+
     },
     "已关联的 HomeKit 房间中未发现传感器设备。" : {
       "localizations" : {
@@ -2209,6 +2219,7 @@
       }
     },
     "患者界面模式" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2405,6 +2416,7 @@
       }
     },
     "找一找" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2436,6 +2448,7 @@
       }
     },
     "找回已记录的物品" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3209,6 +3222,7 @@
       }
     },
     "模式" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3622,6 +3636,9 @@
           }
         }
       }
+    },
+    "清除所有物品" : {
+
     },
     "演示" : {
       "localizations" : {
@@ -4292,6 +4309,7 @@
       }
     },
     "融合模式" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4302,6 +4320,7 @@
       }
     },
     "融合模式：AR 画面常驻，底部切换功能。分离模式：三个功能独立入口，更简洁。" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4372,6 +4391,7 @@
       }
     },
     "记一记" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4382,6 +4402,7 @@
       }
     },
     "记录物品放置位置" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4473,6 +4494,7 @@
       }
     },
     "语音问答记忆助手" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

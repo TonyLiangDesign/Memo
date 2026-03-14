@@ -12,7 +12,6 @@ struct MemoApp: App {
     @State private var tts = SpeechSynthesisService()
     @State private var apiKeyStore = APIKeyStore()
     @State private var geminiMedicationService: GeminiMedicationService
-    @State private var patientModeManager = PatientModeManager()
     @State private var homeKitPassiveEventService = HomeKitPassiveEventService()
     @State private var dailyMemoryService = DailyMemoryService()
     @State private var showSetup = false
@@ -69,7 +68,6 @@ struct MemoApp: App {
             .environment(tts)
             .environment(apiKeyStore)
             .environment(geminiMedicationService)
-            .environment(patientModeManager)
             .environment(homeKitPassiveEventService)
             .environment(dailyMemoryService)
             .sheet(isPresented: $showSetup) {

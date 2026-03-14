@@ -55,8 +55,8 @@ struct LiveModeView: View {
                 Spacer()
                 middleContent
             }
-            if case .success(let name) = recordFeature.phase {
-                SuccessOverlay(name: name)
+            if case .success(let item, _) = recordFeature.phase {
+                SuccessOverlay(name: item)
             }
         }
         .ignoresSafeArea()
@@ -79,9 +79,13 @@ struct LiveModeView: View {
     private var topStatusBar: some View {
         HStack {
             VStack(alignment: .leading, spacing: 6) {
-                // Room badge — always visible when detected
-                if let roomName = orchestrator.stateStore.currentRoomName {
-                    CapsuleHint(text: "📍 \(roomName)")
+                // Room badge — only emoji
+                if let roomName = orchestrator.stateStore.currentRoomName,
+                   let emoji = roomName.first(where: { $0.isEmoji }) {
+                    Text(String(emoji))
+                        .font(.system(size: 32))
+                        .padding(8)
+                        .background(.ultraThinMaterial, in: Circle())
                 } else if let mgr = findManager, mgr.isDetectingRoom {
                     CapsuleHint(text: mgr.statusMessage, showSpinner: true)
                 }
