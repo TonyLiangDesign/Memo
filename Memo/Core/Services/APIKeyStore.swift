@@ -69,9 +69,10 @@ final class APIKeyStore {
         }
 
         let config = Configuration(
-            profile: deploymentMode,
             baseURL: url,
             auth: auth,
+            apiVersion: deploymentMode.apiVersion,
+            statusPathSegment: deploymentMode.statusPathSegment,
             logLevel: .debug,
             deviceId: DeviceIDManager.shared.deviceID
         )
