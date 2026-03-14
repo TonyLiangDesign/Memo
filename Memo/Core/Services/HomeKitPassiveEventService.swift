@@ -542,7 +542,7 @@ final class HomeKitPassiveEventService: NSObject {
         let event = MemoryEvent(
             sender: "homekit",
             senderName: "HomeKit",
-            role: "system",
+            role: "assistant",
             content: content,
             groupID: groupID,
             groupName: groupName,
@@ -813,7 +813,7 @@ final class HomeKitPassiveEventService: NSObject {
                     groupId: "homekit_motion_sensors",
                     groupName: "房间活动记录",
                     senderName: "HomeKit 传感器",
-                    role: "system",
+                    role: "assistant",
                     flush: true
                 )
 
@@ -873,7 +873,7 @@ final class HomeKitPassiveEventService: NSObject {
                     groupId: "homekit_outlet_sensors",
                     groupName: "电器使用记录",
                     senderName: "HomeKit 插座",
-                    role: "system",
+                    role: "assistant",
                     flush: true
                 )
 
