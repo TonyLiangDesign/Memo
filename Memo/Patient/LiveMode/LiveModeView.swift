@@ -136,6 +136,10 @@ struct LiveModeView: View {
                 ForEach(Array(orchestrator.stateStore.visibleFaces.values), id: \.id) { face in
                     CapsuleHint(text: face.displayName)
                 }
+                // HomeKit sensor events
+                if let summary = homeKitService.lastEventSummary {
+                    CapsuleHint(text: summary)
+                }
                 // Tracking status — only in find mode
                 if feature == .find, let mgr = findManager {
                     TrackingStatusBadge(manager: mgr)

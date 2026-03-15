@@ -50,13 +50,9 @@ struct ContactsListView: View {
 
     private func contactRow(_ contact: CareContact) -> some View {
         HStack {
-            VStack(alignment: .leading, spacing: 6) {
+            VStack(alignment: .leading, spacing: 4) {
                 Text(contact.displayName)
                     .font(.headline)
-
-                Text(contact.phoneNumber)
-                    .font(.body)
-                    .foregroundStyle(.blue)
 
                 if !contact.aliases.isEmpty {
                     Text(String(localized: "别名：\(contact.aliases)"))

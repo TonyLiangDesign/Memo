@@ -76,10 +76,14 @@ private actor RecognitionActor {
             return []
         }
 
+        logger.info("🔍 [Match] Detected \(results.count) faces, comparing against \(self.registeredEmbeddings.count) registered")
+
         return results.map { result in
+            logger.info("🔍 [Match] Face embedding dim=\(result.embedding.count)")
             var bestMatch: (contactID: String, name: String, relationship: String?, similarity: Float)?
-            for reg in registeredEmbeddings {
+            for reg in self.registeredEmbeddings {
                 let sim = FaceEmbeddingService.cosineSimilarity(result.embedding, reg.embedding)
+                logger.info("🔍 [Match] vs \(reg.name): sim=\(String(format: "%.6f", sim))")
                 if let current = bestMatch {
                     if sim > current.similarity {
                         bestMatch = (reg.contactID, reg.name, reg.relationship, sim)
@@ -90,6 +94,7 @@ private actor RecognitionActor {
             }
 
             if let match = bestMatch {
+                logger.info("✅ [Match] Best: \(match.name) sim=\(String(format: "%.6f", match.similarity))")
                 return FaceMatch(
                     boundingBox: result.boundingBox,
                     contactID: match.contactID,
@@ -99,6 +104,7 @@ private actor RecognitionActor {
                 )
             }
 
+            logger.info("❌ [Match] No match found")
             return FaceMatch(
                 boundingBox: result.boundingBox, contactID: nil,
                 name: nil, relationship: nil, similarity: 0
@@ -159,22 +165,26 @@ final class FaceRecognitionService: FrameConsumer {
 
     func loadRegisteredFaces(contacts: [CareContact]) {
         let allEmbeddings = faceDataStore.loadAllEmbeddings()
+        logger.info("🔍 [Load] Found \(allEmbeddings.count) embeddings in storage")
 
         var entries: [(contactID: String, name: String, relationship: String?, embedding: [Float])] = []
         for (contactID, embedding) in allEmbeddings {
             if let contact = contacts.first(where: { $0.contactID == contactID }), contact.faceEnrolled {
+                logger.info("🔍 [Load] Contact: \(contact.realName) (\(contact.relation)) - embedding dim=\(embedding.count)")
                 entries.append((
                     contactID: contactID,
                     name: contact.realName,
                     relationship: contact.relation.isEmpty ? nil : contact.relation,
                     embedding: embedding
                 ))
+            } else {
+                logger.warning("🔍 [Load] Skipping contactID=\(contactID) - not enrolled or not found")
             }
         }
 
         Task {
             await recognitionActor.loadEmbeddings(entries)
-            logger.info("Loaded \(entries.count) registered face embeddings")
+            logger.info("✅ [Load] Loaded \(entries.count) registered face embeddings")
         }
     }
 

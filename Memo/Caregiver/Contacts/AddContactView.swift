@@ -38,10 +38,8 @@ struct AddContactView: View {
     }
 
     private var canSave: Bool {
-        let hasName = !relation.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        !relation.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
             || !realName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-        let hasPhone = !phoneNumber.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-        return hasName && hasPhone
     }
 
     private func save() {

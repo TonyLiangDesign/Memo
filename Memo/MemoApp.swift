@@ -16,6 +16,7 @@ struct MemoApp: App {
     @State private var dailyMemoryService = DailyMemoryService()
     @State private var deviceIDManager = DeviceIDManager()
     @State private var showSetup = false
+    @State private var showSplash = true
 
     init() {
         let aks = APIKeyStore()
@@ -51,38 +52,44 @@ struct MemoApp: App {
 
     var body: some Scene {
         WindowGroup {
-            Group {
-                if let role = roleManager.currentRole {
-                    switch role {
-                    case .patient:
-                        PatientRootView()
-                    case .caregiver:
-                        CaregiverTabView()
+            ZStack {
+                Group {
+                    if let role = roleManager.currentRole {
+                        switch role {
+                        case .patient:
+                            PatientRootView()
+                        case .caregiver:
+                            CaregiverTabView()
+                        }
+                    } else {
+                        RoleSwitcherView()
                     }
-                } else {
-                    RoleSwitcherView()
                 }
-            }
-            .environment(roleManager)
-            .environment(authService)
-            .environment(speechService)
-            .environment(tts)
-            .environment(apiKeyStore)
-            .environment(geminiMedicationService)
-            .environment(homeKitPassiveEventService)
-            .environment(dailyMemoryService)
-            .environment(deviceIDManager)
-            .sheet(isPresented: $showSetup) {
-                SetupSheet()
-                    .environment(apiKeyStore)
-            }
-            .task {
-                // Trigger network permission prompt early
-                _ = try? await URLSession.shared.data(from: URL(string: "https://www.apple.com")!)
+                .environment(roleManager)
+                .environment(authService)
+                .environment(speechService)
+                .environment(tts)
+                .environment(apiKeyStore)
+                .environment(geminiMedicationService)
+                .environment(homeKitPassiveEventService)
+                .environment(dailyMemoryService)
+                .environment(deviceIDManager)
+                .sheet(isPresented: $showSetup) {
+                    SetupSheet()
+                        .environment(apiKeyStore)
+                }
+                .task {
+                    // Trigger network permission prompt early
+                    _ = try? await URLSession.shared.data(from: URL(string: "https://www.apple.com")!)
 
-                let context = sharedModelContainer.mainContext
-                SchemaMigration.runIfNeeded(context: context)
-                dailyMemoryService.checkPendingPractice(context: context)
+                    let context = sharedModelContainer.mainContext
+                    SchemaMigration.runIfNeeded(context: context)
+                    dailyMemoryService.checkPendingPractice(context: context)
+                }
+
+                if showSplash {
+                    SplashView(isPresented: $showSplash)
+                }
             }
         }
         .modelContainer(sharedModelContainer)

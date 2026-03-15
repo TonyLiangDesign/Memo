@@ -102,6 +102,7 @@ final class HomeKitPassiveEventService: NSObject {
 
     private var characteristicValueCache: [String: String] = [:]
     private var lastEventTimeByCharacteristic: [String: Date] = [:]
+    private var lastUploadedEventByRoom: [String: String] = [:]
     private var accessoryHomeMap: [UUID: HMHome] = [:]
 
     private let groupID = "memo_homekit_passive_group"
@@ -780,6 +781,14 @@ final class HomeKitPassiveEventService: NSObject {
 
         let roomName = accessory.room?.name ?? accessoryHomeMap[accessory.uniqueIdentifier]?.name ?? "未分配房间"
         let eventType = motionDetected ? "detected" : "cleared"
+
+        // Skip if same event type for this room
+        let roomKey = "\(roomName)_motion"
+        if lastUploadedEventByRoom[roomKey] == eventType {
+            return
+        }
+        lastUploadedEventByRoom[roomKey] = eventType
+
         let timestamp = Date()
 
         logger.info("📍 Motion 事件: \(accessory.name) [\(roomName)] - \(eventType)")
@@ -803,11 +812,12 @@ final class HomeKitPassiveEventService: NSObject {
                 logger.info("⬆️ 开始上传传感器事件: \(roomName) \(eventType)")
 
                 // 根据房间和事件类型生成有意义的记录
+                let isEnglish = Locale.current.language.languageCode?.identifier == "en"
                 let content: String
                 if eventType == "detected" {
-                    content = "患者进入\(roomName)"
+                    content = isEnglish ? "Patient entered \(roomName)" : "患者进入\(roomName)"
                 } else {
-                    content = "患者离开\(roomName)"
+                    content = isEnglish ? "Patient left \(roomName)" : "患者离开\(roomName)"
                 }
 
                 let deviceID = DeviceIDManager.shared.deviceID
@@ -827,12 +837,21 @@ final class HomeKitPassiveEventService: NSObject {
 
                 logger.info("📤 上传内容: \(content)")
 
-                let response = try await client.memorize(request)
+                _ = try? await client.memorize(request)
                 await MainActor.run {
                     sensorEvent.uploadStatus = .uploaded
+                    self.lastEventSummary = content
                     try? modelContext.save()
                 }
                 logger.info("✅ 传感器事件上传成功")
+
+                // Clear after 5 seconds
+                try? await Task.sleep(nanoseconds: 5_000_000_000)
+                await MainActor.run {
+                    if self.lastEventSummary == content {
+                        self.lastEventSummary = nil
+                    }
+                }
             } catch {
                 await MainActor.run {
                     sensorEvent.uploadStatus = .failed
@@ -849,6 +868,14 @@ final class HomeKitPassiveEventService: NSObject {
 
         let roomName = accessory.room?.name ?? accessoryHomeMap[accessory.uniqueIdentifier]?.name ?? "未分配房间"
         let eventType = powerOn ? "on" : "off"
+
+        // Skip if same event type for this outlet
+        let outletKey = "\(accessory.uniqueIdentifier.uuidString)_outlet"
+        if lastUploadedEventByRoom[outletKey] == eventType {
+            return
+        }
+        lastUploadedEventByRoom[outletKey] = eventType
+
         let timestamp = Date()
 
         logger.info("🔌 插座事件: \(accessory.name) [\(roomName)] - \(eventType)")
@@ -871,7 +898,10 @@ final class HomeKitPassiveEventService: NSObject {
             do {
                 logger.info("⬆️ 开始上传插座事件: \(roomName) \(eventType)")
 
-                let content = powerOn ? "患者打开了\(roomName)的\(accessory.name)" : "患者关闭了\(roomName)的\(accessory.name)"
+                let isEnglish = Locale.current.language.languageCode?.identifier == "en"
+                let content = powerOn
+                    ? (isEnglish ? "Patient turned on \(accessory.name) in \(roomName)" : "患者打开了\(roomName)的\(accessory.name)")
+                    : (isEnglish ? "Patient turned off \(accessory.name) in \(roomName)" : "患者关闭了\(roomName)的\(accessory.name)")
 
                 let deviceID = DeviceIDManager.shared.deviceID
                 let augmentedSender = DeviceIDHelper.augment(userId: "homekit_outlet", with: deviceID)
@@ -890,12 +920,21 @@ final class HomeKitPassiveEventService: NSObject {
 
                 logger.info("📤 上传内容: \(content)")
 
-                let response = try await client.memorize(request)
+                _ = try? await client.memorize(request)
                 await MainActor.run {
                     sensorEvent.uploadStatus = .uploaded
+                    self.lastEventSummary = content
                     try? modelContext.save()
                 }
                 logger.info("✅ 插座事件上传成功")
+
+                // Clear after 5 seconds
+                try? await Task.sleep(nanoseconds: 5_000_000_000)
+                await MainActor.run {
+                    if self.lastEventSummary == content {
+                        self.lastEventSummary = nil
+                    }
+                }
             } catch {
                 await MainActor.run {
                     sensorEvent.uploadStatus = .failed
