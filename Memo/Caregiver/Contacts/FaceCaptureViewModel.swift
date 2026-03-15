@@ -57,6 +57,7 @@ final class FaceCaptureViewModel: NSObject {
     private let videoOutput = AVCaptureVideoDataOutput()
     private let processingQueue = DispatchQueue(label: "com.MrPolpo.Memo.faceCapture", qos: .userInteractive)
     private var usingFrontCamera = false
+    nonisolated(unsafe) private var _cachedOrientation: CGImagePropertyOrientation = .right
 
     // MARK: - Frame State
 
@@ -82,7 +83,7 @@ final class FaceCaptureViewModel: NSObject {
 
     func startSession() {
         guard !isSessionRunning else { return }
-        setupSession(front: false)
+        setupSession(front: true)  // Use front camera by default to match LiveMode
         let session = captureSession
         processingQueue.async {
             session.startRunning()
@@ -119,6 +120,7 @@ final class FaceCaptureViewModel: NSObject {
 
         let contactID = self.contactID
         let store = self.faceDataStore
+        let orientation: CGImagePropertyOrientation = usingFrontCamera ? .leftMirrored : .right
 
         processingQueue.async {
             let ciImage = CIImage(cvPixelBuffer: pixelBuffer)
@@ -151,7 +153,7 @@ final class FaceCaptureViewModel: NSObject {
 
             let index = store.sampleCount(for: contactID)
             do {
-                _ = try store.saveSample(cgImage, contactID: contactID, index: index)
+                _ = try store.saveSample(cgImage, contactID: contactID, index: index, orientation: orientation)
                 let newCount = store.sampleCount(for: contactID)
                 Task { @MainActor [weak self] in
                     self?.capturedCount = newCount
@@ -168,7 +170,8 @@ final class FaceCaptureViewModel: NSObject {
     nonisolated private func handleNewFrame(_ sampleBuffer: CMSampleBuffer) {
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
 
-        let handler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:])
+        let orientation = _cachedOrientation
+        let handler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: orientation, options: [:])
         let request = VNDetectFaceLandmarksRequest()
 
         do {
@@ -228,6 +231,8 @@ final class FaceCaptureViewModel: NSObject {
             connection.videoRotationAngle = 90
             connection.isVideoMirrored = front
         }
+
+        _cachedOrientation = front ? .leftMirrored : .right
     }
 
     // MARK: - Private: Quality Assessment

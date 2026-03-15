@@ -33,7 +33,7 @@ final class FaceDataStore {
 
     // MARK: - Sample I/O
 
-    func saveSample(_ image: CGImage, contactID: String, index: Int) throws -> URL {
+    func saveSample(_ image: CGImage, contactID: String, index: Int, orientation: CGImagePropertyOrientation = .up) throws -> URL {
         let dir = samplesDirectory(for: contactID)
         ensureDirectoryExists(dir)
 
@@ -41,31 +41,43 @@ final class FaceDataStore {
         guard let dest = CGImageDestinationCreateWithURL(url as CFURL, UTType.jpeg.identifier as CFString, 1, nil) else {
             throw FaceDataError.writeFailed("Cannot create image destination")
         }
-        let options: [CFString: Any] = [kCGImageDestinationLossyCompressionQuality: 0.8]
+        let options: [CFString: Any] = [
+            kCGImageDestinationLossyCompressionQuality: 0.8,
+            kCGImagePropertyOrientation: orientation.rawValue
+        ]
         CGImageDestinationAddImage(dest, image, options as CFDictionary)
         guard CGImageDestinationFinalize(dest) else {
             throw FaceDataError.writeFailed("Failed to write JPEG")
         }
 
         try setFileProtection(url)
-        logger.info("Saved face sample \(index) for contact \(contactID)")
+        logger.info("Saved face sample \(index) for contact \(contactID) with orientation \(orientation.rawValue)")
         return url
     }
 
-    func loadSamples(for contactID: String) -> [CGImage] {
+    func loadSamples(for contactID: String) -> [(image: CGImage, orientation: CGImagePropertyOrientation)] {
         let dir = samplesDirectory(for: contactID)
         let fm = FileManager.default
         guard fm.fileExists(atPath: dir.path) else { return [] }
 
-        var images: [CGImage] = []
+        var samples: [(image: CGImage, orientation: CGImagePropertyOrientation)] = []
         for i in 0..<10 {
             let url = dir.appendingPathComponent("sample_\(i).jpg")
             guard fm.fileExists(atPath: url.path),
                   let source = CGImageSourceCreateWithURL(url as CFURL, nil),
                   let image = CGImageSourceCreateImageAtIndex(source, 0, nil) else { continue }
-            images.append(image)
+
+            let orientation: CGImagePropertyOrientation
+            if let props = CGImageSourceCopyPropertiesAtIndex(source, 0, nil) as? [CFString: Any],
+               let orientationValue = props[kCGImagePropertyOrientation] as? UInt32 {
+                orientation = CGImagePropertyOrientation(rawValue: orientationValue) ?? .up
+            } else {
+                orientation = .up
+            }
+
+            samples.append((image: image, orientation: orientation))
         }
-        return images
+        return samples
     }
 
     func sampleCount(for contactID: String) -> Int {

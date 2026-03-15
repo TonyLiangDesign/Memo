@@ -10,6 +10,7 @@ struct FaceRegistrationView: View {
     @State private var showCamera = false
     @State private var showDeleteConfirm = false
     @State private var sampleImages: [CGImage] = []
+    @State private var samplesWithOrientation: [(image: CGImage, orientation: CGImagePropertyOrientation)] = []
 
     private let faceDataStore = FaceDataStore()
     private let embeddingService = FaceEmbeddingService()
@@ -125,15 +126,6 @@ struct FaceRegistrationView: View {
                     Label(String(localized: "删除全部"), systemImage: "trash")
                 }
             }
-
-            if canGenerate {
-                Button {
-                    generateEmbedding()
-                } label: {
-                    Label(String(localized: "生成特征"), systemImage: "cpu")
-                }
-                .disabled(isGenerating)
-            }
         }
     }
 
@@ -184,8 +176,14 @@ struct FaceRegistrationView: View {
     }
 
     private func loadSamples() {
-        sampleImages = faceDataStore.loadSamples(for: contact.contactID)
+        samplesWithOrientation = faceDataStore.loadSamples(for: contact.contactID)
+        sampleImages = samplesWithOrientation.map { $0.image }
         updatePhase()
+
+        // Auto-generate when reaching 5 samples
+        if sampleCount >= 5 && !contact.faceEnrolled && embeddingService.isAvailable {
+            generateEmbedding()
+        }
     }
 
     private func updatePhase() {
@@ -204,7 +202,7 @@ struct FaceRegistrationView: View {
         Task {
             do {
                 let embedding = try await embeddingService.generateReferenceEmbedding(
-                    samples: sampleImages
+                    samples: samplesWithOrientation
                 ) { progress in
                     Task { @MainActor in
                         // Guard: don't overwrite .completed with late progress callback
@@ -240,6 +238,7 @@ struct FaceRegistrationView: View {
         try? modelContext.save()
 
         sampleImages = []
+        samplesWithOrientation = []
         phase = .collecting
     }
 }

@@ -77,60 +77,104 @@ final class FaceEmbeddingService: @unchecked Sendable {
     func generateEmbeddings(from pixelBuffer: CVPixelBuffer, orientation: CGImagePropertyOrientation = .right) async throws -> [(embedding: [Float], boundingBox: CGRect)] {
         guard let model else { throw FaceEmbeddingError.modelNotAvailable }
 
-        let detections = try await detectFaces(in: pixelBuffer, orientation: orientation)
-        guard !detections.isEmpty else { return [] }
-
-        var results: [(embedding: [Float], boundingBox: CGRect)] = []
-        for detection in detections {
-            let aligned = try alignFace(
-                pixelBuffer: pixelBuffer,
-                landmarks: detection.landmarks,
-                boundingBox: detection.boundingBox,
-                orientation: orientation
-            )
-            let embedding = try infer(alignedFace: aligned, model: model)
-            results.append((embedding: embedding, boundingBox: detection.boundingBox))
+        // Normalize to .up orientation for consistent embeddings
+        let ciImage = CIImage(cvPixelBuffer: pixelBuffer).oriented(orientation)
+        let context = CIContext()
+        let normalizedWidth: CGFloat
+        let normalizedHeight: CGFloat
+        switch orientation {
+        case .up, .down, .upMirrored, .downMirrored:
+            normalizedWidth = CGFloat(CVPixelBufferGetWidth(pixelBuffer))
+            normalizedHeight = CGFloat(CVPixelBufferGetHeight(pixelBuffer))
+        default:
+            normalizedWidth = CGFloat(CVPixelBufferGetHeight(pixelBuffer))
+            normalizedHeight = CGFloat(CVPixelBufferGetWidth(pixelBuffer))
         }
 
-        return results
+        guard let normalizedCGImage = context.createCGImage(ciImage, from: CGRect(x: 0, y: 0, width: normalizedWidth, height: normalizedHeight)) else {
+            throw FaceEmbeddingError.imageConversionFailed
+        }
+
+        // Detect faces in normalized image (always use .up)
+        let normalizedCI = CIImage(cgImage: normalizedCGImage)
+        let handler = VNImageRequestHandler(ciImage: normalizedCI, orientation: .up, options: [:])
+        let request = VNDetectFaceLandmarksRequest()
+        try handler.perform([request])
+
+        guard let results = request.results, !results.isEmpty else { return [] }
+
+        var embeddings: [(embedding: [Float], boundingBox: CGRect)] = []
+        for detection in results {
+            guard let landmarks = detection.landmarks else { continue }
+            let bbox = detection.boundingBox
+
+            let srcPoints = extractFivePoints(
+                landmarks: landmarks,
+                faceBBox: bbox,
+                imageWidth: normalizedWidth,
+                imageHeight: normalizedHeight
+            )
+
+            let aligned = applyAffineAlignment(image: normalizedCGImage, srcPoints: srcPoints)
+            let embedding = try infer(alignedFace: aligned, model: model)
+            embeddings.append((embedding: embedding, boundingBox: bbox))
+        }
+
+        return embeddings
     }
 
     /// Generate embedding from a pre-cropped face CGImage (used during registration).
-    func generateEmbedding(faceImage: CGImage) async throws -> [Float] {
+    func generateEmbedding(faceImage: CGImage, orientation: CGImagePropertyOrientation = .up) async throws -> [Float] {
         guard let model else { throw FaceEmbeddingError.modelNotAvailable }
 
-        // Detect landmarks within the cropped face image
-        let ciImage = CIImage(cgImage: faceImage)
-        let handler = VNImageRequestHandler(ciImage: ciImage, options: [:])
+        // Normalize image to .up orientation first to ensure consistent embeddings
+        let normalizedImage: CGImage
+        if orientation != .up {
+            let ciImage = CIImage(cgImage: faceImage).oriented(orientation)
+            let context = CIContext()
+            if let cgImage = context.createCGImage(ciImage, from: ciImage.extent) {
+                normalizedImage = cgImage
+            } else {
+                normalizedImage = faceImage
+            }
+        } else {
+            normalizedImage = faceImage
+        }
+
+        // Detect landmarks in normalized image (always use .up orientation)
+        let ciImage = CIImage(cgImage: normalizedImage)
+        let handler = VNImageRequestHandler(ciImage: ciImage, orientation: .up, options: [:])
         let request = VNDetectFaceLandmarksRequest()
         try handler.perform([request])
 
         guard let observation = request.results?.first,
               let landmarks = observation.landmarks else {
             // If no landmarks in crop, just resize to 112×112 without alignment
-            let resized = resizeImage(faceImage, to: CGSize(width: 112, height: 112))
+            let resized = resizeImage(normalizedImage, to: CGSize(width: 112, height: 112))
             return try infer(alignedFace: resized, model: model)
         }
 
         // Extract 5-point landmarks in image coordinates
         let faceRect = observation.boundingBox
-        let w = CGFloat(faceImage.width)
-        let h = CGFloat(faceImage.height)
+        let w = CGFloat(normalizedImage.width)
+        let h = CGFloat(normalizedImage.height)
         let srcPoints = extractFivePoints(landmarks: landmarks, faceBBox: faceRect, imageWidth: w, imageHeight: h)
 
         // Compute affine and align
-        let aligned = applyAffineAlignment(image: faceImage, srcPoints: srcPoints)
+        let aligned = applyAffineAlignment(image: normalizedImage, srcPoints: srcPoints)
         return try infer(alignedFace: aligned, model: model)
     }
 
     /// Generate average reference embedding from multiple face samples.
-    func generateReferenceEmbedding(samples: [CGImage], progress: ((Float) -> Void)? = nil) async throws -> [Float] {
+    func generateReferenceEmbedding(samples: [(image: CGImage, orientation: CGImagePropertyOrientation)], progress: ((Float) -> Void)? = nil) async throws -> [Float] {
         guard !samples.isEmpty else { throw FaceEmbeddingError.noSamples }
+        logger.info("🔍 [RefEmbed] Generating reference from \(samples.count) samples")
 
         var embeddings: [[Float]] = []
         for (i, sample) in samples.enumerated() {
-            let emb = try await generateEmbedding(faceImage: sample)
+            let emb = try await generateEmbedding(faceImage: sample.image, orientation: sample.orientation)
             embeddings.append(emb)
+            logger.info("🔍 [RefEmbed] Sample \(i+1)/\(samples.count): dim=\(emb.count)")
             progress?(Float(i + 1) / Float(samples.count))
         }
 
@@ -146,6 +190,7 @@ final class FaceEmbeddingService: @unchecked Sendable {
         // L2 normalize
         l2Normalize(&avg)
 
+        logger.info("✅ [RefEmbed] Generated reference dim=\(avg.count) from \(embeddings.count) samples")
         return avg
     }
 
@@ -153,7 +198,10 @@ final class FaceEmbeddingService: @unchecked Sendable {
 
     /// Cosine similarity between two L2-normalized embeddings (= dot product).
     static func cosineSimilarity(_ a: [Float], _ b: [Float]) -> Float {
-        guard a.count == b.count else { return 0 }
+        guard a.count == b.count else {
+            logger.warning("⚠️ [Similarity] Dimension mismatch: \(a.count) vs \(b.count)")
+            return 0
+        }
         var result: Float = 0
         vDSP_dotpr(a, 1, b, 1, &result, vDSP_Length(a.count))
         return result
