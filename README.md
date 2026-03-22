@@ -36,6 +36,10 @@ MemoCare uses text-to-speech extensively to communicate with the patient. The de
 
 ---
 
+## Concept Video
+
+This concept video showcases how smart devices and EverMemOS assist individuals with Alzheimer’s disease in their everyday lives.
+
 [Project Demo Video](https://youtu.be/kGIt4n-ULwQ)
 
 ## Patient Mode
